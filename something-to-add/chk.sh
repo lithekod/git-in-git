@@ -1,6 +1,6 @@
-git status --porcelain | grep " M " -q
-FOUND=$?
-if [[ $FOUND ]]
+git diff --exit-code &> /dev/null
+RET=$?
+if [[ $RET -eq 0 ]]
 then
     echo "SOLVED"
 else
