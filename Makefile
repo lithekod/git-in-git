@@ -8,9 +8,13 @@ OUTFOLDERS=$(patsubst %/$(INIT),%/$(OUT),$(EXRS))
 ANSWERS=$(patsubst %,%/$(ANS),$(OUTFOLDERS))
 CHECKS=$(patsubst %,%/$(CHK),$(OUTFOLDERS))
 
+.PHONY: all solve test clean
+
 all:   $(OUTFOLDERS)
 solve: $(ANSWERS)
 test:  $(CHECKS)
+clean:
+	rm -rf $(OUTFOLDERS)
 
 %: %/$(INIT)
 
@@ -24,5 +28,3 @@ test:  $(CHECKS)
 	@echo == $< ==
 	@cd $<; mkdir -p $(OUT); cd $(OUT); cp -r ../*.txt .; bash ../$(INIT)
 
-clean:
-	rm -rf $(OUTFOLDERS)
