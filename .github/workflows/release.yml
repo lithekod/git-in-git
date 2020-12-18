@@ -1,0 +1,25 @@
+name: Packaging
+
+on:
+  release:
+      types: [published]
+
+jobs:
+  build:
+    name: Package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        if: startsWith(github.ref, 'refs/tags/')
+
+      - name: Package zip-file
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          make zip
+
+      - name: Upload Release Asset
+        uses: fnkr/github-action-ghr@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GHR_PATH: ./git-in-git.zip
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
