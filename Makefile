@@ -13,6 +13,10 @@ CHECKS=$(patsubst %,%/$(CHK),$(OUTFOLDERS))
 all:   $(OUTFOLDERS)
 solve: $(ANSWERS)
 test:  $(CHECKS)
+zip:   all
+	@echo
+	@echo == Zipping ==
+	zip -9 -r git-in-git */
 clean:
 	rm -rf $(OUTFOLDERS)
 
@@ -25,6 +29,7 @@ clean:
 	cd $<; bash ../$(CHK)
 
 %/$(OUT): % clean
+	@echo
 	@echo == $< ==
 	@cd $<; mkdir -p $(OUT); cd $(OUT); cp -r ../*.txt .; bash ../$(INIT)
 
