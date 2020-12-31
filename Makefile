@@ -2,11 +2,13 @@ OUT=out/
 INIT=init.sh
 ANS=ans.sh
 CHK=chk.sh
+SUB=ex
 
 EXRS=$(wildcard */$(INIT))
 OUTFOLDERS=$(patsubst %/$(INIT),%/$(OUT),$(EXRS))
 ANSWERS=$(patsubst %,%/$(ANS),$(OUTFOLDERS))
 CHECKS=$(patsubst %,%/$(CHK),$(OUTFOLDERS))
+ZIPS=$(patsubst %/out/,$(SUB)/%/,$(OUTFOLDERS))
 
 .PHONY: all solve test clean
 
@@ -16,7 +18,11 @@ test:  $(CHECKS)
 zip:   all
 	@echo
 	@echo == Zipping ==
-	zip -9 -r git-in-git */
+	@rm -f $(SUB)
+	@ln -s . $(SUB)
+	zip -9r git-in-git $(ZIPS) --exclude $(SUB)/$(SUB)
+	@rm -f $(SUB)
+
 clean:
 	rm -rf $(OUTFOLDERS)
 
