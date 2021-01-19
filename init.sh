@@ -51,6 +51,8 @@ case $1 in
     cd 04-*
     rm -rf *
 
+    echo "I'm a text file!" > hello.txt
+
     git init
     git branch -m "main"
     git add hello.txt
