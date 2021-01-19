@@ -54,9 +54,9 @@ case $1 in
     echo "I'm a text file!" > hello.txt
 
     git init
-    git branch -m "main"
     git add hello.txt
     git commit -m "Inital commit"
+    git branch -m "get-away-from-me"
 
     exit 0
 ;;

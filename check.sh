@@ -63,7 +63,7 @@ case $1 in
     fi
 
     BRANCH=$(git branch --show-current)
-    if test "$BRANCH" = "main"
+    if test "$BRANCH" = "get-away-from-me"
     then
         echo "Looks like you're still on the main branch"
         exit 1
