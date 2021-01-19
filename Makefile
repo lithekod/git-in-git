@@ -1,7 +1,7 @@
 SUBDIR=ex
-INIT=init.sh
-ANS=answers.sh
-CHK=check.sh
+INIT=./init.sh
+ANS=./answers.sh
+CHK=./check.sh
 TMP=.tmp
 
 SHELL=sh

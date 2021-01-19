@@ -43,9 +43,9 @@ case $1 in
     fi
 
     NR=$(git rev-list --count HEAD)
-    if test $NR -lt 2
+    if test $NR -gt 2
     then
-        echo "I didn't find any new commits"
+        echo "I found a new commit, but I only wanted the two that were already there"
         exit 1
     fi
 

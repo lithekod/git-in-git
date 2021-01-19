@@ -19,7 +19,7 @@ case $1 in
 
 3*|03*)
     echo "git add ."
-    echo "git commit -m \"do the thing!\""
+    echo "git commit --amend -m \"do the thing!\""
 
     exit 0
 ;;
