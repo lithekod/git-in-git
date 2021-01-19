@@ -1,4 +1,4 @@
-name: Test
+name: Checks
 
 on:
   push:
@@ -7,11 +7,13 @@ on:
 
 jobs:
   tests:
-    name: Tests
-    runs-on: ubuntu-latest
+    name: Checks
+    runs-on: ubuntu18.04
     steps:
       - uses: actions/checkout@v2
-      - name: Run tests
+      - name: Git version
         run: |
-          ls -la
-          make test
+          git --version
+      - name: Run check
+        run: |
+          make check
