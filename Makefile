@@ -1,6 +1,7 @@
 INIT=init.sh
 ANS=answers.sh
 CHK=check.sh
+TMP=.tmp
 
 SHELL=sh
 FILES := 01-something-to-add/
@@ -8,8 +9,13 @@ FILES += 02-learning-to-commit/
 FILES += 03-changing-the-past/
 FILES += 04-branching-out/
 
+CHECKS := $(patsubst %,%/c,$(FILES))
+
+.PHONY: all test clean
+
 all: $(FILES)
-	rm -rf all
+
+check: $(CHECKS)
 
 clean:
 	rm -rf $(FILES)
@@ -17,7 +23,12 @@ clean:
 %/:
 	mkdir $@
 	$(SHELL) $(INIT) $@
-	
+
+%/c: %/
+	$(SHELL) -c "$(ANS) $< > $(TMP)"
+	$(SHELL) -c "cd $<; $(SHELL) ../$(TMP)"
+	$(SHELL) -c "$(CHK) $<"
+
 
 # .PHONY: all solve test clean
 # 
