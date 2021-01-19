@@ -21,6 +21,7 @@ check: $(CHECKS)
 
 clean:
 	rm -rf $(FILES)
+	rm git-in-git.zip
 
 zip:   all
 	@echo
