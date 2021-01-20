@@ -3,8 +3,10 @@
 \usepackage[utf8]{inputenc}
 
 \usepackage{xcolor}
+\usepackage{hyperref}
 
-\title{git --- an introduction}
+\title[git]{git --- an introduction}
+\subtitle{Learning to commit}
 \author{LiTHe kod}
 \date{2021}
 
@@ -14,17 +16,103 @@
 
 \frame{\titlepage}
 
+\section{Getting started}
+
 \begin{frame}[fragile]
-  \frametitle{AAAAA}
-  This is how you create a git repository.
+  \begin{center}
+  \Huge \alert{DON'T\\PANIC}
+  \end{center}
+\end{frame}
 
-  \temporalgray{+}{\texttt{\$ git init}}
+\begin{frame}[fragile]
+  \frametitle{Getting git -- Getting Binaries}
+  
+  Windows: git BASH, \url{gitforwindows.org}\\
+  MacOS: brew, \url{git-scm.com}\\
+  Linux: Big-brain time\\
 
-  \temporalgray{+}{\texttt{\# rm --rf --no-preserve-root /}}
-  \vspace{0.5em}
+\end{frame}
 
-  This text always shows
+\begin{frame}[fragile]
+  \frametitle{Getting git -- Getting Help}
+  
+  \vspace{1em}
+  In your terminal at your fingetips \\
+  \hspace{1em} \texttt{\$ man git} -- Exhaustive, good if you know what you want \\
+  \hspace{1em} \texttt{\$ man giteveryday} -- Short description of commands \\
+  \hspace{1em} \texttt{\$ man gittutorial} -- A guide for getting started \\
+  \hspace{1em} \texttt{\$ man git commit} -- Exhaustive information about the `commit' subcommand\\
+  \vspace{1em}
+  From the web, just a GET away \\
+  \hspace{1em} \url{git-scm.com/doc} -- Links and reference manual \\
+  \hspace{1em} \url{lithekod.se/gitcheatsheet/} -- LiTHe kods cheat-sheet \\
+  \hspace{1em} \url{shorturl.at/jpCDQ} -- GitHub's cheat-sheet \\
+  \hspace{1em} \url{shorturl.at/tuLO3} -- Flowchart by Justin Hileman for messes\\
+    
+\end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Getting git -- Start a Config} 
+  
+  \texttt{\$ git config --global user.name `kodapa'} \\
+  \texttt{\$ git config --global user.email `kodapa@lithekod.se'} \\
+  Setting name and email. \\
+  \vspace{1em}
+  As a file: `$\sim$/.gitconfig'
+    
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Getting git -- Example Config} 
+  
+  \begin{verbatim}
+[user]
+  email = edvard.thornros@gmail.com
+  name = Edvard Thörnros
+[log]
+  abbrevCommit = true
+  oneline = true
+  graph = true
+[add]
+  verbose = true
+[push]
+  default = tracking
+  followTags = true
+[commit]
+  verbose = true
+[rerere]
+  enable = true
+  \end{verbatim}
+    
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Getting to know the family}
+
+  \temporalgray{+}{\texttt{\$ git add} -- I want to keep these} \\
+  \temporalgray{+}{\texttt{\$ git commit} -- I did a thing!} \\
+  \temporalgray{+}{\texttt{\$ git push} -- Tell the world what you've done} \\
+  \temporalgray{+}{\texttt{\$ git checkout} -- Change where `here' is} \\
+\end{frame}
+  
+\begin{frame}[fragile]
+  \frametitle{Commands for information}
+
+  \temporalgray{+}{\texttt{\$ git status} -- What is happening?} \\
+  \temporalgray{+}{\texttt{\$ git log} -- What has happened?} \\
+  \temporalgray{+}{\texttt{\$ git show} -- What happened there?} \\
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Some more commands (bonus round)}
+  These commands can be scary and confusing, and hard to `undo'. Worth a google if you
+  want to get more use out of git.
+  \vspace{1em}
+  
+  \temporalgray{+}{\texttt{\$ git rebase} -- Change the order of commits} \\
+  \temporalgray{+}{\texttt{\$ git worktree} -- All the files!} \\
+  \temporalgray{+}{\texttt{\$ git cherry-pick} -- `rebase lite'} \\
+    
 \end{frame}
 
 \end{document}
