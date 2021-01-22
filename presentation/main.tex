@@ -15,6 +15,9 @@
 \begin{document}
 
 \frame{\titlepage}
+\frame{\tableofcontents}
+
+%TODO about us
 
 \section{Getting started}
 
@@ -25,7 +28,15 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Getting git -- Getting Binaries}
+  \frametitle{What even is git?}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{What even is git? \dots and why is it better than email?}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Getting started -- Getting binaries}
   
   Windows: git BASH, \url{gitforwindows.org}\\
   MacOS: brew, \url{git-scm.com}\\
@@ -34,74 +45,223 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Getting git -- Getting Help}
-  
-  \vspace{1em}
-  In your terminal at your fingetips \\
-  \hspace{1em} \texttt{\$ man git} -- Exhaustive, good if you know what you want \\
-  \hspace{1em} \texttt{\$ man giteveryday} -- Short description of commands \\
-  \hspace{1em} \texttt{\$ man gittutorial} -- A guide for getting started \\
-  \hspace{1em} \texttt{\$ man git commit} -- Exhaustive information about the `commit' subcommand\\
-  \vspace{1em}
-  From the web, just a GET away \\
-  \hspace{1em} \url{git-scm.com/doc} -- Links and reference manual \\
-  \hspace{1em} \url{lithekod.se/gitcheatsheet/} -- LiTHe kods cheat-sheet \\
-  \hspace{1em} \url{shorturl.at/jpCDQ} -- GitHub's cheat-sheet \\
-  \hspace{1em} \url{shorturl.at/tuLO3} -- Flowchart by Justin Hileman for messes\\
-    
+  \frametitle{Getting started -- Telling git who you are}
+
+  Your name:\\
+  \texttt{\$ git config --global user.name "kodapa"} \\[1em]
+
+  Your email:\\
+  \texttt{\$ git config --global user.email "kodapa@lithekod.se"} \\
+
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Getting git -- Start a Config} 
-  
-  \texttt{\$ git config --global user.name `kodapa'} \\
-  \texttt{\$ git config --global user.email `kodapa@lithekod.se'} \\
-  Setting name and email. \\
-  \vspace{1em}
-  As a file: `$\sim$/.gitconfig'
-    
+  \frametitle{Getting started -- Getting your repository}
+  \begin{tabular}{ll}
+    \texttt{git clone} & \\
+    \texttt{git init} & \\
+  \end{tabular}
 \end{frame}
+%%\begin{frame}[fragile]
+%%  \frametitle{Getting git -- Getting Help}
+%%
+%%  \vspace{1em}
+%%  In your terminal at your fingetips \\
+%%  \hspace{1em} \texttt{\$ man git} -- Exhaustive, good if you know what you want \\
+%%  \hspace{1em} \texttt{\$ man giteveryday} -- Short description of commands \\
+%%  \hspace{1em} \texttt{\$ man gittutorial} -- A guide for getting started \\
+%%  \hspace{1em} \texttt{\$ man git commit} -- Exhaustive information about the `commit' subcommand\\
+%%  \vspace{1em}
+%%  From the web, just a GET away \\
+%%  \hspace{1em} \url{git-scm.com/doc} -- Links and reference manual \\
+%%  \hspace{1em} \url{lithekod.se/gitcheatsheet/} -- LiTHe kods cheat-sheet \\
+%%  \hspace{1em} \url{shorturl.at/jpCDQ} -- GitHub's cheat-sheet \\
+%%  \hspace{1em} \url{shorturl.at/tuLO3} -- Flowchart by Justin Hileman for messes\\
+%%  %TODO meetups
+%%
+%%\end{frame}
 
-\begin{frame}[fragile]
-  \frametitle{Getting git -- Example Config} 
-  
-  \begin{verbatim}
-[user]
-  email = edvard.thornros@gmail.com
-  name = Edvard Thörnros
-[log]
-  abbrevCommit = true
-  oneline = true
-  graph = true
-[add]
-  verbose = true
-[push]
-  default = tracking
-  followTags = true
-[commit]
-  verbose = true
-[rerere]
-  enable = true
-  \end{verbatim}
-    
+\AtBeginSection[] % Do nothing for \section*
+{
+\begin{frame}<beamer>
+\frametitle{Outline}
+\tableofcontents[currentsection]
 \end{frame}
+}
+
+\section{Basic commands}
+\subsection{Getting to know the family}
 
 \begin{frame}[fragile]
   \frametitle{Getting to know the family}
 
-  \temporalgray{+}{\texttt{\$ git add} -- I want to keep these} \\
-  \temporalgray{+}{\texttt{\$ git commit} -- I did a thing!} \\
-  \temporalgray{+}{\texttt{\$ git push} -- Tell the world what you've done} \\
-  \temporalgray{+}{\texttt{\$ git checkout} -- Change where `here' is} \\
+  \begin{tabular}{ll}
+    \texttt{git add} & I want to keep these! \\
+    \texttt{git commit} & I did a thing! \\
+    \texttt{git push} & I want to share this! \\ % mention pull
+  \end{tabular}
+
 \end{frame}
-  
+
+\begin{frame}
+  \frametitle{Getting to know the family -- add}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Getting to know the family -- commit}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Getting to know the family -- push}
+\end{frame}
+
+\subsection{Commands for information}
+
 \begin{frame}[fragile]
   \frametitle{Commands for information}
 
-  \temporalgray{+}{\texttt{\$ git status} -- What is happening?} \\
-  \temporalgray{+}{\texttt{\$ git log} -- What has happened?} \\
-  \temporalgray{+}{\texttt{\$ git show} -- What happened there?} \\
+  \begin{tabular}{ll}
+    \texttt{git status} & What is happening? \\
+    \texttt{git diff} & What has changed? \\
+    \texttt{git log} & What has happened? \\
+    \texttt{git show} & What changed over there? \\
+  \end{tabular}
+
 \end{frame}
+
+\begin{frame}
+  \frametitle{Commands for information -- status}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Commands for information -- diff}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Commands for information -- log}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Commands for information -- show}
+\end{frame}
+
+\subsection{Branching out}
+
+\begin{frame}[fragile]
+  \frametitle{Branching out}
+
+  \begin{tabular}{ll}
+    \texttt{git checkout} & What is happening? \\
+    \texttt{git branch} & What has happened? \\
+    \texttt{git log} & What happened there? \\
+  \end{tabular}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Branching out -- checkout}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Branching out -- branch}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Branching out -- log (again!)}
+\end{frame}
+
+\subsection{Branching in}
+
+\begin{frame}[fragile]
+  \frametitle{Branching in}
+
+  \begin{tabular}{ll}
+    \texttt{git merge} & I want both this and that! \\
+    \texttt{git pull} & I want \emph{your} stuff! \\
+  \end{tabular}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Branching in -- merge}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Branching in -- pull}
+\end{frame}
+
+%%% Working with others
+
+% Pause? 5-10 minutes
+
+\section{Working with others}
+\subsection{Creating your first Merge Request}
+
+\begin{frame}[fragile]
+  \frametitle{Creating your first Merge Request}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Creating your first Merge Request -- Creating your branch}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Creating your first Merge Request -- Doing your thing}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Creating your first Merge Request -- Pushing your branch}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Creating your first Merge Request -- Asking for feedback}
+\end{frame}
+
+\subsection{Reading your first Merge Request}
+
+\begin{frame}[fragile]
+  \frametitle{Reading your first Merge Request}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Reading your first Merge Request -- Getting their changes}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Reading your first Merge Request -- Testing their changes}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Reading your first Merge Request -- Reviewing their changes}  % maybe two slides
+\end{frame}
+
+\subsection{Project management}
+
+\begin{frame}[fragile]
+  \frametitle{Project management}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Project management -- Commit messages}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Project management -- Tags}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Project management -- git $\sim$flow$\sim$}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Project management -- CI} % not always needed etc
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Project management -- gitignore}
+\end{frame}
+
+\section{Advanced commands}
 
 \begin{frame}[fragile]
   \frametitle{Some more commands (bonus round)}
@@ -109,9 +269,9 @@
   want to get more use out of git.
   \vspace{1em}
   
-  \temporalgray{+}{\texttt{\$ git rebase} -- Change the order of commits} \\
-  \temporalgray{+}{\texttt{\$ git worktree} -- All the files!} \\
-  \temporalgray{+}{\texttt{\$ git cherry-pick} -- `rebase lite'} \\
+  \texttt{git worktree} -- Looking at other branches \\
+  \texttt{git cherry-pick} -- Stealing commits \\
+  \texttt{git stash} -- WIP commits \\
     
 \end{frame}
 
