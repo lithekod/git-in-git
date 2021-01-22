@@ -12,6 +12,8 @@
 
 \newcommand{\temporalgray}[2]{\temporal<#1>{\phantom{#2}}{#2}{\textcolor{gray}{#2}}}
 
+\newcommand{\keyword}[1]{\hspace{-1.0em}\colorbox{black}{\textcolor{white}{\textbf{#1}}}}
+
 \begin{document}
 
 \frame{\titlepage}
@@ -105,19 +107,84 @@
     \texttt{git commit} & I did a thing! \\
     \texttt{git push} & I want to share this! \\ % mention pull
   \end{tabular}
+  \\ [2.0em]
+
+  \texttt{add}, \texttt{commit}, \texttt{push} and \texttt{pull}$^*$
+  are the four horsemen of version control. The bread and butter.
+  \\ [2.0em]
+
+  \small $^*$\texttt{pull} will be discussed later.
 
 \end{frame}
 
 \begin{frame}
   \frametitle{Getting to know the family -- add}
+  \keyword{When}\\
+    You have made changes that you want to commit.
+    Usually the first command in a series of commands.
+  \\ [0.5em]
+
+  \keyword{How}\\
+  \hspace{-1.0em}
+  \begin{tabular}{ll}
+    \texttt{git add hello.txt} & Stage the specified file \\
+    \texttt{git add *.py} & Stage all python-files \\
+    \texttt{git add -i} & Interactive prompt for adding \\
+    \texttt{git add -p} & Add a part of a file \\
+  \end{tabular}
+  \\ [0.5em]
+
+  \keyword{Expect}\\
+  Silence.
 \end{frame}
 
 \begin{frame}
   \frametitle{Getting to know the family -- commit}
+  \keyword{When}\\
+    You have added a \emph{relevant} group of changes. Making
+    the code ready for a new change. Preferably as small as possible.
+  \\ [0.5em]
+
+  \keyword{How}\\
+  \hspace{-1.0em}
+  \begin{tabular}{ll}
+    \texttt{git commit} & Commit the added file(s) \\
+    \texttt{git commit --amend} & Update the previous commit \\
+    \texttt{git commit -m "msg"} & Specify a message, skips the editor \\
+  \end{tabular}
+  \\ [0.5em]
+
+  \keyword{Expect}\\
+  A texteditor pops up, where you write a descriptive commit message. And
+  output similar to: \\
+  \texttt{[master 3b65386] A descriptive message} \\
+  \texttt{1 file changed, 1 insertion(+)}
+
 \end{frame}
 
 \begin{frame}
   \frametitle{Getting to know the family -- push}
+  \keyword{When}\\
+    After you've made commits you are happy with, or if the computer
+    is about to blow up. If you haven't pushed, no one has to know what
+    happened here.\\
+  \\ [0.5em]
+
+  \keyword{Push}\\
+  \hspace{-1.0em}
+  \begin{tabular}{ll}
+    \texttt{git push} & Tell the server about your changes \\
+  \end{tabular}
+  \\ [0.5em]
+
+  \keyword{Expect}\\ [0.1em]
+  \small
+  \texttt{Enumerating objects: 1, done.}\\
+  \texttt{Counting objects: 100\% (1/1), done.}\\
+  \texttt{Writing objects: 100\% (1/1), 192 bytes | 192.00 KiB/s, done.}\\
+  \texttt{Total 1 (delta 0), reused 0 (delta 0), pack-reused 0}\\
+  \texttt{To github.com:kodapan/verkligt.git}\\
+  \texttt{   192c869..2ab0e3c  main -> main}\\
 \end{frame}
 
 \subsection{Commands for information}
