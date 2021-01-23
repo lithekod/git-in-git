@@ -2,8 +2,9 @@
 
 \usepackage[utf8]{inputenc}
 
-\usepackage{xcolor}
+\usepackage{fancyvrb}
 \usepackage{hyperref}
+\usepackage{xcolor}
 
 \title[git]{git --- an introduction}
 \subtitle{Learning to commit}
@@ -135,20 +136,183 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Commands for information -- status}
+  \framesubtitle{How's it looking right now?}
+
+\begin{verbatim}
+$ git status
+\end{verbatim}
+\pause{}
+\begin{verbatim}
+On branch master
+nothing to commit, working tree clean
+\end{verbatim}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
+  \frametitle{Commands for information -- status}
+  \framesubtitle{How's it looking right now?}
+
+\begin{verbatim}
+$ vim my_file.py
+$ git status
+\end{verbatim}
+\pause{}
+\vspace{-3.5ex}
+\begin{verbatim}
+On branch master
+\end{verbatim}
+\pause{}
+\vspace{-3.5ex}
+\begin{verbatim}
+Changes not staged for commit:
+\end{verbatim}
+\pause{}
+\vspace{-3.5ex}
+\begin{verbatim}
+  (use "git add <file>..." to update what will be
+   commited)
+\end{verbatim}
+\pause{}
+\vspace{-3.5ex}
+\begin{verbatim}
+  (use "git checkout -- <file>..." to discard changes
+   in working directory)
+\end{verbatim}
+\pause{}
+\vspace{-3.5ex}
+\begin{verbatim}
+
+        modified:   my_file.py
+\end{verbatim}
+\pause{}
+\vspace{-3.5ex}
+\begin{verbatim}
+
+no changes added to commit (use "git add" and/or
+                            "git commit -a")
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
   \frametitle{Commands for information -- diff}
+  \framesubtitle{What's new?}
+
+\begin{verbatim}
+$ git diff
+\end{verbatim}
+\pause{}
+\vspace{-2.4ex}
+{
+\color{gray}
+\begin{Verbatim}[commandchars=\\\{\}]
+diff --git a/my_file.py b/my_file.py
+index a40ce22..ea7235e 100644
+--- a/my_file.py
++++ b/my_file.py
+\end{Verbatim}
+}
+\pause{}
+\begin{Verbatim}[commandchars=\\\{\}]
+@@ -1,5 +1,5 @@
+ def main():
+\textcolor{red}{-    print("Hello World")}
+\textcolor{blue}{+    print("Hello World!")}
+ 
+ if __name__ == "__main__":
+     main()
+\end{Verbatim}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Commands for information -- log}
+\begin{Verbatim}
+$ git log
+\end{Verbatim}
+\pause{}
+\vspace{-1.2ex} % this spacing can heck off
+\begin{Verbatim}
+commit 4582c8c2c41d6c7c46bab45d1aae807afacc357e
+Author: Kodapan <kodapan@lithekod.se>
+Date:   Fri Jan 22 17:48:27 2021 +0100
+
+    add proper punctutation
+
+commit 8e94d9e8bb33496484c80eaff68541dc0b8cccbc
+Author: Kodapan <kodapan@lithekod.se>
+Date:   Fri Jan 22 17:43:14 2021 +0100
+
+    my first commit
+\end{Verbatim}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
+  \frametitle{Commands for information -- log --graph}
+\begin{Verbatim}[commandchars=\\\{\}]
+$ git log --graph
+* commit 4582c8c2c41d6c7c46bab45d1aae807afacc357e
+| Author: Kodapan <kodapan@lithekod.se>
+| Date:   Sat Jan 23 01:13:54 2021 +0100
+| 
+|     add proper punctuation
+| 
+* commit 8e94d9e8bb33496484c80eaff68541dc0b8cccbc
+  Author: Kodapan <kodapan@lithekod.se>
+  Date:   Fri Jan 22 17:43:14 2021 +0100
+  
+      my first commit
+\end{Verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Commands for information -- log --graph}
+\begin{Verbatim}[commandchars=\\\{\}]
+$ git log --graph
+* commit \textcolor{red}{4582}c8c2c41d6c7c46bab45d1aae807afacc357e
+| Author: Kodapan <kodapan@lithekod.se>
+| Date:   Sat Jan 23 01:13:54 2021 +0100
+| 
+|     add proper punctuation
+| 
+* commit 8e94d9e8bb33496484c80eaff68541dc0b8cccbc
+  Author: Kodapan <kodapan@lithekod.se>
+  Date:   Fri Jan 22 17:43:14 2021 +0100
+  
+      my first commit
+\end{Verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
   \frametitle{Commands for information -- show}
+\begin{Verbatim}[commandchars=\\\{\}]
+$ git show \textcolor{red}{4582}
+\end{Verbatim}
+\pause{}
+\vspace{-2.5ex}
+\begin{verbatim}
+commit 4582c8c2c41d6c7c46bab45d1aae807afacc357e
+Author: Kodapan <kodapan@lithekod.se>
+Date:   Fri Jan 22 17:48:27 2021 +0100
+\end{verbatim}
+\vspace{-3ex}
+\begin{verbatim}
+    add proper punctutation
+\end{verbatim}
+\vspace{-2ex}
+\begin{Verbatim}[commandchars=\\\{\}]
+diff --git a/my_file.py b/my_file.py
+index a40ce22..ea7235e 100644
+--- a/my_file.py
++++ b/my_file.py
+@@ -1,5 +1,5 @@
+ def main():
+\textcolor{red}{-    print("Hello World")}
+\textcolor{blue}{+    print("Hello World!")}
+ 
+ if __name__ == "__main__":
+     main()
+\end{Verbatim}
 \end{frame}
 
 \subsection{Branching out}
