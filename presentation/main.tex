@@ -478,53 +478,46 @@ index a40ce22..ea7235e 100644
 \begin{frame}
   \frametitle{Branching out -- checkout}
 
-    \command{git checkout} - The sonic screwdriver of git \\[1em]
-    Used to:
-    \begin{itemize}
-        \item Jump to branches
-        \begin{itemize}
-            \item[] \command{git checkout mybranch}
-        \end{itemize}
-        \item Create branches
-        \begin{itemize}
-            \item[] \command{git checkout -b newbranch}
-        \end{itemize}
-        \item Undo changes
-        \begin{itemize}
-            \item[] \command{git checkout -- file.txt}
-        \end{itemize}
-    \end{itemize}
+    \keyword{When} \\
+    \command{git checkout} - The sonic screwdriver of git. Gets stuff from somewhere else. \\[1em]
+
+    \keyword{How} \\
+    \begin{tabular}{ll}
+        \command{git checkout mybranch} & Jump to branches \\
+        \command{git checkout -b newbranch} & Create branches \\
+        \command{git checkout -- file.txt} & Undo changes \\
+    \end{tabular}
+
+    \keyword{Expect} \\
+    Silence.
 
 \end{frame}
 
 \begin{frame}
   \frametitle{Branching out -- branch}
 
+    \keyword{When} \\
     \command{git branch} - Show and manage branches \\[1em]
-    Used to:
-    \begin{itemize}
-        \item Show which branches exist
-        \begin{itemize}
-            \item[] \command{git branch}
-        \end{itemize}
-        \item Create branches
-        \begin{itemize}
-            \item[] \command{git branch newbranch}
-        \end{itemize}
-        \item Delete branches
-        \begin{itemize}
-            \item[] \command{git branch -d mergedbranch}
-        \end{itemize}
-    \end{itemize}
+
+    \keyword{How} \\
+    \vspace{-2ex}
+    \begin{tabular}{ll}
+        \command{git branch} & Show which branches exist \\ 
+        \command{git branch newbranch} & Create branches \\
+        \command{git branch -d mergedbranch} & Delete branches \\
+    \end{tabular}
+
+    \keyword{Expect} \\
+    Silence.
 \end{frame}
 
 \begin{frame}
   \frametitle{Branching out -- log (again!)}
 
-    Using \texttt{git log} it is possible to travel in time. \\[1em]
+    Using \texttt{git log} it is possible to travel in time and reminisce. \\[1em]
 
     \only<1>{\command{git checkout <hash>}}
-    \only<2->{\command{git checkout 479ad80ddf...}} \\[3em]
+    \only<2->{\command{git checkout 479ad80ddf}} \\[3em]
 
     \pause[3]
 
@@ -544,22 +537,34 @@ index a40ce22..ea7235e 100644
   \begin{tabular}{ll}
     \command{git merge} & I want both this and that! \\
     \command{git pull} & I want \emph{your} stuff! \\
-  \end{tabular}
+  \end{tabular} \\ [3em]
+
+  For lonely nights when you want some company.
 
 \end{frame}
 
 \begin{frame}
   \frametitle{Branching in -- merge} % #1
 
+    \keyword{When} \\
     Combine two or more branches into one! \\[1em]
 
-    \command{git merge featurebranch} \\[3em]
+    \keyword{How} \\
+    \command{git merge featurebranch} \hspace{1em} When two becomes one \\[3em]
 
     \pause
-
+    \keyword{Expect} \\
     This may result in a so called ``\alert{merge conflict}" \\[1em]
 
     Again, \emph{don't panic}!
+\end{frame}
+
+\begin{frame}
+  \frametitle{PANIK!}
+
+    \begin{center}
+        \Huge \alert{PANIK PANIK PANIK PANIK PANIK}
+    \end{center}
 \end{frame}
 
 \begin{frame}
@@ -591,18 +596,23 @@ index a40ce22..ea7235e 100644
         \texttt{not as cool feature} \\
         \texttt{cool feature} \\
         \texttt{coolest feature} \\[1em]
-        Done! Save, add, commit and then push to resolve the conflict!
+        Done! Save, \texttt{add}, \texttt{commit} and then \texttt{push} to
+        resolve the conflict!
     }
 \end{frame}
 
 \begin{frame}
   \frametitle{Branching in -- pull}
-    Get the latest changes from the upstream! \\[1em]
+    \keyword{When}\\
+    Get the latest changes from the upstream! When you get the nagging feeling
+    that something is wrong. \\[1em]
 
+    \keyword{How}\\
     \command{git pull} \\[3em]
 
     \pause
 
+    \keyword{Expect}\\
     This may also result in \alert{merge conflicts}. \\[1em]
 \end{frame}
 
