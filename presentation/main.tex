@@ -465,7 +465,7 @@ index a40ce22..ea7235e 100644
   \frametitle{Branching out}
 
   \begin{tabular}{ll}
-    \texttt{git checkout} & Jump to branch! \\
+    \texttt{git checkout} & Jump to a branch! \\
     \texttt{git branch} & Manage branches! \\
     \texttt{git log} & Find commits to jump to! \\
   \end{tabular}
@@ -479,13 +479,18 @@ index a40ce22..ea7235e 100644
     Used to:
     \begin{itemize}
         \item Jump to branches
+        \begin{itemize}
+            \item[] \texttt{git checkout mybranch}
+        \end{itemize}
         \item Create branches
+        \begin{itemize}
+            \item[] \texttt{git checkout -b newbranch}
+        \end{itemize}
         \item Undo changes
-    \end{itemize} \\[1em]
-
-    \texttt{git checkout mybranch} \\
-    \texttt{git checkout -b newbranch} \\
-    \texttt{git checkout -- file.txt}
+        \begin{itemize}
+            \item[] \texttt{git checkout -- file.txt}
+        \end{itemize}
+    \end{itemize}
 
 \end{frame}
 
@@ -495,16 +500,19 @@ index a40ce22..ea7235e 100644
     \texttt{git branch} - Show and manage branches \\[1em]
     Used to:
     \begin{itemize}
-        \item<1-> Show which branches exist
-        \item<2-> Create branches
-        \item<3-> Delete branches
-    \end{itemize} \\[1em]
-
-    \pause[4]
-
-    \texttt{git branch} \\
-    \texttt{git branch newbranch} \\
-    \texttt{git branch -d mergedbranch}
+        \item Show which branches exist
+        \begin{itemize}
+            \item[] \texttt{git branch}
+        \end{itemize}
+        \item Create branches
+        \begin{itemize}
+            \item[] \texttt{git branch newbranch}
+        \end{itemize}
+        \item Delete branches
+        \begin{itemize}
+            \item[] \texttt{git branch -d mergedbranch}
+        \end{itemize}
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
