@@ -3,16 +3,22 @@ INIT=init.sh
 ANS=ans.sh
 CHK=chk.sh
 SUBDIR=ex
+SLIDES=slides.pdf
 
 EXRS=$(wildcard */$(INIT))
 OUTFOLDERS=$(patsubst %/$(INIT),%/$(OUT),$(EXRS))
 ANSWERS=$(patsubst %,%/$(ANS),$(OUTFOLDERS))
 CHECKS=$(patsubst %,%/$(CHK),$(OUTFOLDERS))
-ZIPS=$(patsubst %/out/,$(SUBDIR)/%/,$(OUTFOLDERS))
+ZIPS=$(patsubst %/out/,$(SUBDIR)/%/,$(OUTFOLDERS)) $(SLIDES)
 
-.PHONY: all solve test clean
+.PHONY: all solve test clean $(SLIDES)
 
-all:   $(OUTFOLDERS)
+all:   $(OUTFOLDERS) $(SLIDES)
+
+$(SLIDES): presentation/main.pdf
+	make -C presentation handout.pdf
+	cp presentation/handout.pdf $(SLIDES)
+
 solve: $(ANSWERS)
 test:  $(CHECKS)
 zip:   all
@@ -25,6 +31,7 @@ zip:   all
 
 clean:
 	rm -rf $(OUTFOLDERS)
+	rm -f $(SLIDES)
 
 %: %/$(INIT)
 
