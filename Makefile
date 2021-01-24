@@ -12,6 +12,10 @@ FILES += 03-changing-the-past/
 FILES += 04-branching-out/
 
 ZIPS := $(patsubst %,$(SUBDIR)/%,$(FILES))
+ZIPS += $(SUBDIR)/$(SLIDES)
+ZIPS += $(SUBDIR)/$(INIT)
+ZIPS += $(SUBDIR)/$(ANS)
+ZIPS += $(SUBDIR)/$(CHK)
 CHECKS := $(patsubst %,%/c,$(FILES))
 
 .PHONY: all solve test clean clean-local zip $(SLIDES)
