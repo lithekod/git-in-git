@@ -11,9 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Git version
+      - name: git version
         run: |
           git --version
+      - name: git-config
+        run: |
+            git config --global user.email "kodapan@lithekod.se"
+            git config --global user.name "Kodapan Apansson"
+            git config --global init.defaultBranch "master"
       - name: Run check
         run: |
           make check
