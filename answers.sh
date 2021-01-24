@@ -30,6 +30,11 @@ case $1 in
     exit 0
 ;;
 
+5*|05*)
+    echo "git merge implement-f"
+
+    exit 0
+;;
 
 esac
 

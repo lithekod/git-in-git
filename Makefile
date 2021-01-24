@@ -10,6 +10,7 @@ FILES := 01-something-to-add/
 FILES += 02-learning-to-commit/
 FILES += 03-changing-the-past/
 FILES += 04-branching-out/
+FILES += 05-merging-the-feature/
 
 ZIPS := $(patsubst %,$(SUBDIR)/%,$(FILES))
 ZIPS += $(SUBDIR)/$(SLIDES)

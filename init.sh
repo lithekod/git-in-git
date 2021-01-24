@@ -61,6 +61,29 @@ case $1 in
     exit 0
 ;;
 
+5*|05*)
+    cd 05-*
+    rm -rf *
+
+    echo "def f(): pass # Not implemented" > code.py
+    echo >> code.py
+    echo "print(f())" >> code.py
+
+    git init
+    git add code.py
+    git commit -m "Inital commit"
+
+    git checkout -b "implement-f"
+    echo "def f(): return 42" > code.py
+    echo >> code.py
+    echo "print(f())" >> code.py
+    git commit code.py -m "Implement f"
+
+    git checkout master
+
+    exit 0
+;;
+
 esac
 
 echo "Don't know what task that is..."

@@ -62,10 +62,33 @@ case $1 in
         exit 1
     fi
 
-    BRANCH=$(git branch --show-current)
+    BRANCH=$(git rev-parse --abbrev-ref HEAD)
     if test "$BRANCH" = "get-away-from-me"
     then
         echo "Looks like you're still on the main branch"
+        exit 1
+    fi
+
+    echo "SOLVED"
+    exit 0
+;;
+
+5*|05*)
+    cd 05-*
+
+    BRANCH=$(git rev-parse --abbrev-ref HEAD)
+    if test "$BRANCH" = "implement-f"
+    then
+        echo "Looks like you're on the 'implement-f' branch."
+        echo "You need to return to the 'master' branch."
+        exit 1
+    fi
+
+    CMP=$(echo "def f(): return 42"; echo; echo "print(f())")
+    CUR=$(cat code.py)
+    if test "$CMP" != "$CUR"
+    then
+        echo "Looks like the file has not been merged yet"
         exit 1
     fi
 
