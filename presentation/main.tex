@@ -625,22 +625,119 @@ index a40ce22..ea7235e 100644
 
 \begin{frame}[fragile]
   \frametitle{Creating your first Merge Request}
+  \begin{itemize}
+    \item Plan
+    \item Create a branch
+    \item Implement the feature (edit-add-commit)
+    \item Push your branch
+    \item Create the Merge Request and ask for feedback
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Creating your first Merge Request -- Creating your branch}
+  \command{git checkout -b light-theme}
+\begin{verbatim}
+Switched to a new branch 'light-theme'
+\end{verbatim}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Creating your first Merge Request -- Doing your thing}
+  \command{vim ribs.py}\\
+  \command{git add ribs.py}\\
+  \command{git commit}
+\begin{verbatim}
+[light-theme 07933cb] Add support for light theme
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+\end{verbatim}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Creating your first Merge Request -- Pushing your branch}
+  \command{git push -u origin light-theme}
+\pause
+\vspace{-0.6ex}
+{
+\color{gray}
+\begin{Verbatim}[commandchars=\\\{\}]
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+\end{Verbatim}
+}
+\vspace{-1.2ex}
+\begin{Verbatim}[commandchars=\\\{\}]
+remote:
+remote: To create a merge request for light-theme, visit:
+remote:   https://gitlab.liu.se/edvth289/ribs/-/merge_requests/new?merge_request%5Bsource_branch%5D=light-theme
+remote:
+To gitlab.liu.se:edvth289/ribs.git
+ * [new branch]      light-theme -> light-theme
+\end{Verbatim}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Creating your first Merge Request -- Asking for feedback}
+  \includegraphics[width=\linewidth]{merge-request/mr-menu-empty.png}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Creating your first Merge Request -- Asking for feedback}
+  \includegraphics[width=\linewidth]{merge-request/mr-create-01-empty.png}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Creating your first Merge Request -- Asking for feedback}
+  \begin{itemize}[<+->]
+    \item Title
+    \begin{itemize}[<+->]
+      \item Very short (one sentence).
+      \item Explain what the change does.
+      \item If you can't explain in a short sentence, you should \emph{probably}
+            have split it up more. Maybe next time ;)
+    \end{itemize}
+    \item Description
+      \begin{itemize}[<+->]
+        \item Long-form.
+        \item Begin with the \emph{why}.
+        \item Explain what you've done broadly.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Creating your first Merge Request -- Asking for feedback}
+  \includegraphics[width=\linewidth]{merge-request/mr-create-01-text.png}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Creating your first Merge Request -- Asking for feedback}
+  \includegraphics[width=\linewidth]{merge-request/mr-create-03.png} % reviewer
+\end{frame}
+
+\begin{frame}
+  \frametitle{Creating your first Merge Request -- Asking for feedback}
+  Who reviews depends on the project and your team.
+
+  \begin{itemize}
+    \item Everyone
+    \item XX\%
+    \item Specific people for specific types of changes
+    \item A ``representative'' from each sub-team
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Creating your first Merge Request -- Asking for feedback}
+  \includegraphics[width=\linewidth]{merge-request/mr-create-04.png} % submit-button
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Creating your first Merge Request -- Asking for feedback}
+  \includegraphics[width=\linewidth]{merge-request/mr-menu-created.png}
 \end{frame}
 
 \subsection{Reading your first Merge Request}
