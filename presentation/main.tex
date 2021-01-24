@@ -14,6 +14,8 @@
 \author{LiTHe kod}
 \date{2021}
 
+\logo{\vspace{-5.0em}\includegraphics[width=.06\textwidth]{watermark.png}\hspace*{.93\paperwidth}}
+
 \newcommand{\temporalgray}[2]{\temporal<#1>{\phantom{#2}}{#2}{\textcolor{gray}{#2}}}
 \newcommand{\keyword}[1]{\hspace{-1.0em}\colorbox{black}{\textcolor{white}{\textbf{#1}\vphantom{Ep}}}\vspace{0.2em}} % yikes
 \newcommand{\command}[1]{\texttt{\textcolor{gray}{\$} {#1}}}
@@ -23,17 +25,15 @@
 \frame{\titlepage}
 \frame{\tableofcontents}
 
-\logo{\vspace{-5.0em}\includegraphics[width=.06\textwidth]{watermark.png}\hspace*{.93\paperwidth}}
-
 %TODO about us
 
 \begin{frame}[fragile]
   \frametitle{LiTHe kod? Tell me more!}
-  Your one stop shop for GameJams, comptetive programming, meetups and other coding related events.
+  Your one stop shop for Game Jams, competitive programming, meetups and other coding related events.
 
   \vspace{2.0em}
-  Applications are open for the 21/20 board! \\
-  Mail questions to \texttt{ordf@lithekod.se} \\
+  Applications are open for the 21/22 board! \\
+  Mail any questions to \texttt{ordf@lithekod.se} \\
 \end{frame}
 
 \section{Getting started}
@@ -50,7 +50,8 @@
 
   Version control that doesn't care about your feelings. \\
 
-  \keyword{Pro}
+  \vspace{1em}
+  \keyword{Pros}
   \begin{itemize}
     \item Works offline
     \item Fast
@@ -64,14 +65,12 @@
   \frametitle{What even is git? \dots and why is it better than email?}
 
   Why emaijl/Droipbox/whatever isn't the best \\
-  version control system -- unlike git.
-  \vspace{1em} \\
+  version control system -- unlike git.\\
+  \vspace{1em}
   \keyword{Cons}
   \begin{itemize}[<+->]
-    \item Hard to spell & pronounce -- unlike git
+    \item Hard to spell \& pronounce -- unlike git
     \item Hard to see what has changed -- unlike git
-    \item Cannot run your test-suite  -- unlike git
-    \item Doesn't work for projects 1M-LOC -- unlike git
     \item Requires constant internet -- unlike git
     \item Cannot do automatic merges  -- unlike git
     \item Slow -- unlike git
@@ -84,9 +83,9 @@
 \begin{frame}[fragile]
   \frametitle{Getting started -- Getting binaries}
   
-  Windows: git BASH, \url{gitforwindows.org}\\
-  MacOS: brew, \url{git-scm.com}\\
-  Linux: Big-brain time\\
+  Windows: git Bash, \url{gitforwindows.org}\\
+  macOS: homebrew, \url{git-scm.com}\\
+  Linux: Probably already installed\\
 
 \end{frame}
 
@@ -94,10 +93,10 @@
   \frametitle{Getting started -- Telling git who you are}
 
   Your name:\\
-  \command{git config --global user.name "kodapa"} \\[1em]
+  \command{git config --global user.name "kodapan"} \\[1em]
 
   Your email:\\
-  \command{git config --global user.email "kodapa@lithekod.se"} \\
+  \command{git config --global user.email "kodapan@lithekod.se"} \\
 
 \end{frame}
 
@@ -119,10 +118,6 @@
 
 \section{Basic commands}
 \subsection{Getting to know the family}
-
-% When/why to use them
-% How to use them
-% (Maybe) what you expect to happen
 
 % Edvard
 \begin{frame}[fragile]
@@ -174,12 +169,10 @@
   \vspace{0.5em}
 
   \keyword{How}\\
-  \hspace{-1.0em}
+  \hspace{-0.95em}
   \begin{tabular}{ll}
     \command{git add hello.txt} & Stage the specified file \\
     \command{git add *.py} & Stage all python-files \\
-    \command{git add -i} & Interactive prompt for adding \\
-    \command{git add -p} & Add a part of a file \\
   \end{tabular}
   \vspace{0.5em}
 
@@ -190,12 +183,12 @@
 \begin{frame}[fragile]
   \frametitle{Getting to know the family -- commit}
   \keyword{When}\\
-    You have added a \emph{relevant} group of changes. Making
+    You have added a \emph{cohesive} group of changes. Making
     the code ready for a new change. Preferably as small as possible.
   \vspace{0.5em}
 
   \keyword{How}\\
-  \hspace{-1.0em}
+  \hspace{-0.95em}
   \begin{tabular}{ll}
     \command{git commit} & Commit the added file(s) \\
     \command{git commit --amend} & Update the previous commit \\
@@ -204,7 +197,7 @@
   \vspace{0.5em}
 
   \keyword{Expect}\\
-  A texteditor pops up, where you write a descriptive commit message. And
+  A text editor pops up, where you write a descriptive commit message. You will get
   output similar to: \\
 \begin{verbatim}
 [master 3b65386] A descriptive message
@@ -217,12 +210,12 @@
   \frametitle{Getting to know the family -- push}
   \keyword{When}\\
     After you've made commits you are happy with, or if the computer
-    is about to blow up. If you haven't pushed, no one has to know what
-    happened here.\\
+    is about to blow up. If you haven't pushed, no one knows what
+    you've changed. \\
   \vspace{0.5em}
 
   \keyword{How}\\
-  \hspace{-1.0em}
+  \hspace{-0.95em}
   \begin{tabular}{ll}
     \command{git push} & Tell the server about your changes \\
   \end{tabular}
@@ -232,7 +225,8 @@
 \begin{verbatim}
 Enumerating objects: 1, done.
 Counting objects: 100% (1/1), done.
-Writing objects: 100% (1/1), 192 bytes | 192.00 KiB/s, done.
+Writing objects: 100% (1/1), 192 bytes | 192.00 KiB/s,
+  done.
 Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
 To github.com:kodapan/verkligt.git
    192c869..2ab0e3c  main -> main
@@ -537,12 +531,14 @@ index a40ce22..ea7235e 100644
     \command{git checkout} - The sonic screwdriver of git. Gets stuff from somewhere else. \\[1em]
 
     \keyword{How} \\
+    \hspace{-0.95em}
     \begin{tabular}{ll}
         \command{git checkout mybranch} & Jump to branches \\
         \command{git checkout -b newbranch} & Create branches \\
         \command{git checkout -- file.txt} & Undo changes \\
     \end{tabular}
 
+    \vspace{1em}
     \keyword{Expect} \\
     Silence.
 
@@ -555,13 +551,14 @@ index a40ce22..ea7235e 100644
     \command{git branch} - Show and manage branches \\[1em]
 
     \keyword{How} \\
-    \vspace{-2ex}
+    \hspace{-0.95em}
     \begin{tabular}{ll}
         \command{git branch} & Show which branches exist \\ 
         \command{git branch newbranch} & Create branches \\
         \command{git branch -d mergedbranch} & Delete branches \\
     \end{tabular}
 
+    \vspace{1em}
     \keyword{Expect} \\
     Silence.
 \end{frame}
@@ -605,7 +602,7 @@ index a40ce22..ea7235e 100644
     Combine two or more branches into one! \\[1em]
 
     \keyword{How} \\
-    \command{git merge featurebranch} \hspace{1em} When two becomes one \\[3em]
+    \command{git merge featurebranch} \hspace{1em} When two become one \\[3em]
 
     \pause
     \keyword{Expect} \\
@@ -615,10 +612,10 @@ index a40ce22..ea7235e 100644
 \end{frame}
 
 \begin{frame}
-  \frametitle{PANIK!}
+  \frametitle{PANIC!}
 
     \begin{center}
-        \Huge \alert{PANIK PANIK PANIK PANIK PANIK}
+        \Huge \alert{PANIC PANIC PANIC PANIC PANIC}
     \end{center}
 \end{frame}
 
@@ -671,6 +668,12 @@ index a40ce22..ea7235e 100644
     This may also result in \alert{merge conflicts}. \\[1em]
 \end{frame}
 
+%TODO
+\begin{frame}
+  \frametitle{Branching in -- pull (upstream)}
+  TODO
+\end{frame}
+
 %%% Working with others
 
 % Pause? 5-10 minutes
@@ -680,7 +683,8 @@ index a40ce22..ea7235e 100644
 
 \begin{frame}[fragile]
   \frametitle{Creating your first Merge Request -- Getting started}
-  Sharing is caring!
+  Sharing is caring! This is how you create your own Merge Request, from start
+  to finish.
   \pause{}
   \begin{itemize}[<+->]
     \item Plan
@@ -760,16 +764,16 @@ To gitlab.liu.se:edvth289/ribs.git
   \begin{itemize}[<+->]
     \item Title
     \begin{itemize}[<+->]
-      \item Very short (one sentence).
-      \item Explain what the change does.
+      \item Very short (one sentence)
+      \item Explain what the change does
       \item If you can't explain in a short sentence, you should \emph{probably}
             have split it up more. Maybe next time ;)
     \end{itemize}
     \item Description
       \begin{itemize}[<+->]
-        \item Long-form.
-        \item Begin with the \emph{why}.
-        \item Explain what you've done broadly.
+        \item Long-form
+        \item Begin with the \emph{why}
+        \item Explain what you've done broadly
       \end{itemize}
   \end{itemize}
 \end{frame}
@@ -884,10 +888,6 @@ To gitlab.liu.se:edvth289/ribs.git
 \subsection{Project management}
 
 \begin{frame}[fragile]
-  \frametitle{Project management}
-\end{frame}
-
-\begin{frame}[fragile]
   \frametitle{Project management -- Commit messages}
   \vspace{1em}
 
@@ -896,16 +896,18 @@ To gitlab.liu.se:edvth289/ribs.git
 
   \keyword{Do}
   \begin{itemize}
-    \item Keep the first line short
-    \item Maybe add details after the first line
+    \item \dots keep the first line short
+    \item \dots maybe add details after the first line
   \end{itemize}
   \vspace{1em}
 
+  \pause
+
   \keyword{Don't}
   \begin{itemize}
-    \item Write everything, people can read code
-    \item Hammer your keyboard
-    \item Add version numbers
+    \item \dots write everything, people can read code
+    \item \dots hammer your keyboard
+    \item \dots add version numbers
   \end{itemize}
   \vspace{1em}
 
@@ -921,10 +923,6 @@ When running 'git clone --local', the operation may
 fail if another process is modifying the source
 repository. Document that this race condition is
 known to hopefully help anyone who may run into it.
-
-Suggested-by: Junio C Hamano <gitster@pobox.com>
-Signed-off-by: Taylor Blau <me@ttaylorr.com>
-Signed-off-by: Junio C Hamano <gitster@pobox.com>
   \end{verbatim}
   Taken from git's git-repo.
 \end{frame}
@@ -954,7 +952,6 @@ Signed-off-by: Junio C Hamano <gitster@pobox.com>
   \end{itemize}
   \vspace{1em}
 
-  \pause
   Maybe try feature branches! \texttt{master} and feature branches is a great first step.
 
 \end{frame}
@@ -1009,22 +1006,6 @@ Signed-off-by: Junio C Hamano <gitster@pobox.com>
 
       \node at (6,-2) [dot] (M) {};
       \draw [->] (F) -- (M);
-
-
-    % \node (edit) {Edit};
-    % \node (add) [right=of edit] {\texttt{git add}};
-    % \node (commit) [right=of add] {\texttt{git commit}};
-    % \node (push) [right=of commit] {\texttt{git push}};
-
-    % \draw (edit) edge (add);
-    % \draw (add) edge (commit);
-    % \draw (commit) edge (push);
-
-    % \draw (edit) edge[loop above] (edit);
-    % \draw (add) edge[loop above] (add);
-
-    % \draw (commit) edge[bend left, below] (edit);
-    % \draw (push) edge[bend left, below] (edit);
   \end{tikzpicture}
 \end{frame}
 
@@ -1043,7 +1024,6 @@ Signed-off-by: Junio C Hamano <gitster@pobox.com>
   \end{itemize}
   \vspace{1em}
 
-  \pause
   Might be a bit overkill for a lab, but amazing for projects.
 
 \end{frame}
@@ -1070,21 +1050,19 @@ Signed-off-by: Junio C Hamano <gitster@pobox.com>
   \vspace{1em}
 
   \keyword{Ignore}
-  \begin{itemize}[<+->]
-    \item Large binary files \textsuperscript{*}
-    \item Temporary files \& log files
-    \item Build output
-    \item Editor files \textsuperscript{**}
+  \begin{itemize}
+    \item<2-> Large binary files \textsuperscript{*}
+    \item<3-> Temporary files \& log files
+    \item<4-> Build output
+    \item<5-> Editor files \textsuperscript{**}
   \end{itemize}
   \vspace{1em}
 
-  \pause
-  More `guidelines' than actual rules.
+  \visible<6->{More `guidelines' than actual rules.}
   \vspace{1em}
-  \pause
 
-  \small \textsuperscript{*} Game developers beware \\
-  \small \textsuperscript{**} Some editors e.g. vscode and JetBrains like to live in git-repos \\
+  \visible<2->{\small \textsuperscript{*} Game developers beware \\}
+  \visible<5->{\small \textsuperscript{**} Some editors (e.g. VS Code and JetBrains) like to live in git-repos \\}
 \end{frame}
 
 \section{Final stretch}
@@ -1110,13 +1088,15 @@ Signed-off-by: Junio C Hamano <gitster@pobox.com>
   Human contact \\
   \hspace{1em} LiTHe kod's meetups -- Tuesdays from 17:15 late into the night, \\
   \vspace{1em}
+  \pause
 
   In your terminal at your fingetips \\
   \hspace{1em} \command{man git} -- Exhaustive, good if you know what you want \\
   \hspace{1em} \command{man giteveryday} -- Short description of commands \\
   \hspace{1em} \command{man gittutorial} -- A guide for getting started \\
-  \hspace{1em} \command{man git commit} -- Exhaustive information about the `commit' subcommand\\
+  \hspace{1em} \command{man git <subcommand>} -- Exhaustive information about a subcommand\\
   \vspace{1em}
+  \pause
 
   From the web, just a GET away \\
   \hspace{1em} \url{git-scm.com/doc} -- Links and reference manual \\
