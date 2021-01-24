@@ -9,7 +9,7 @@ EXRS=$(wildcard */$(INIT))
 OUTFOLDERS=$(patsubst %/$(INIT),%/$(OUT),$(EXRS))
 ANSWERS=$(patsubst %,%/$(ANS),$(OUTFOLDERS))
 CHECKS=$(patsubst %,%/$(CHK),$(OUTFOLDERS))
-ZIPS=$(patsubst %/out/,$(SUBDIR)/%/,$(OUTFOLDERS)) $(SLIDES)
+ZIPS=$(patsubst %/out/,$(SUBDIR)/%/,$(OUTFOLDERS))  $(SUBDIR)/$(SLIDES)
 
 .PHONY: all solve test clean clean-local $(SLIDES)
 
