@@ -11,11 +11,12 @@ ANSWERS=$(patsubst %,%/$(ANS),$(OUTFOLDERS))
 CHECKS=$(patsubst %,%/$(CHK),$(OUTFOLDERS))
 ZIPS=$(patsubst %/out/,$(SUBDIR)/%/,$(OUTFOLDERS)) $(SLIDES)
 
-.PHONY: all solve test clean $(SLIDES)
+.PHONY: all solve test clean clean-local $(SLIDES)
 
-all:   $(OUTFOLDERS) $(SLIDES)
+all: $(OUTFOLDERS) $(SLIDES)
+	make -C presentation all
 
-$(SLIDES): presentation/main.pdf
+$(SLIDES):
 	make -C presentation handout.pdf
 	cp presentation/handout.pdf $(SLIDES)
 
@@ -29,9 +30,12 @@ zip:   all
 	zip -9r git-in-git $(ZIPS) --exclude $(SUBDIR)/$(SUBDIR)
 	@rm -f $(SUBDIR)
 
-clean:
+clean-local:
 	rm -rf $(OUTFOLDERS)
 	rm -f $(SLIDES)
+
+clean: clean-local
+	make -C presentation clean
 
 %: %/$(INIT)
 
@@ -41,8 +45,7 @@ clean:
 %/$(OUT)/$(CHK): %/$(OUT) %/$(OUT)/$(ANS)
 	cd $<; bash ../$(CHK)
 
-%/$(OUT): % clean
+%/$(OUT): % clean-local
 	@echo
 	@echo == $< ==
 	@cd $<; mkdir -p $(OUT); cd $(OUT); cp -r ../*.txt .; bash ../$(INIT)
-
