@@ -1,20 +1,28 @@
-OUT=out/
-INIT=init.sh
-ANS=ans.sh
-CHK=chk.sh
 SUBDIR=ex
+INIT=./init.sh
+ANS=./answers.sh
+CHK=./check.sh
+TMP=.tmp
 
-EXRS=$(wildcard */$(INIT))
-OUTFOLDERS=$(patsubst %/$(INIT),%/$(OUT),$(EXRS))
-ANSWERS=$(patsubst %,%/$(ANS),$(OUTFOLDERS))
-CHECKS=$(patsubst %,%/$(CHK),$(OUTFOLDERS))
-ZIPS=$(patsubst %/out/,$(SUBDIR)/%/,$(OUTFOLDERS))
+SHELL=sh
+FILES := 01-something-to-add/
+FILES += 02-learning-to-commit/
+FILES += 03-changing-the-past/
+FILES += 04-branching-out/
 
-.PHONY: all solve test clean
+ZIPS := $(patsubst %,$(SUBDIR)/%,$(FILES))
+CHECKS := $(patsubst %,%/c,$(FILES))
 
-all:   $(OUTFOLDERS)
-solve: $(ANSWERS)
-test:  $(CHECKS)
+.PHONY: all test clean zip
+
+all: $(FILES)
+
+check: $(CHECKS)
+
+clean:
+	rm -rf $(FILES)
+	rm -f git-in-git.zip
+
 zip:   all
 	@echo
 	@echo == Zipping ==
@@ -23,19 +31,12 @@ zip:   all
 	zip -9r git-in-git $(ZIPS) --exclude $(SUBDIR)/$(SUBDIR)
 	@rm -f $(SUBDIR)
 
-clean:
-	rm -rf $(OUTFOLDERS)
+%/:
+	mkdir $@
+	$(SHELL) $(INIT) $@
 
-%: %/$(INIT)
-
-%/$(OUT)/$(ANS): %/$(OUT)
-	cd $<; bash ../$(ANS)
-
-%/$(OUT)/$(CHK): %/$(OUT) %/$(OUT)/$(ANS)
-	cd $<; bash ../$(CHK)
-
-%/$(OUT): % clean
-	@echo
-	@echo == $< ==
-	@cd $<; mkdir -p $(OUT); cd $(OUT); cp -r ../*.txt .; bash ../$(INIT)
-
+%/c: %/
+	$(SHELL) -c "$(ANS) $< > $(TMP)"
+	$(SHELL) -c "cd $<; $(SHELL) ../$(TMP)"
+	$(SHELL) -c "$(CHK) $<"
+	rm $(TMP)

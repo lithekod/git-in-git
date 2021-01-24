@@ -1,4 +1,4 @@
-name: Test
+name: Checks
 
 on:
   push:
@@ -7,11 +7,18 @@ on:
 
 jobs:
   tests:
-    name: Tests
+    name: Checks
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Run tests
+      - name: git version
         run: |
-          ls -la
-          make test
+          git --version
+      - name: git-config
+        run: |
+            git config --global user.email "kodapan@lithekod.se"
+            git config --global user.name "Kodapan Apansson"
+            git config --global init.defaultBranch "master"
+      - name: Run check
+        run: |
+          make check
