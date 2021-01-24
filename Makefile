@@ -26,10 +26,10 @@ clean:
 zip:   all
 	@echo
 	@echo == Zipping ==
-	@rm -f $(SUBDIR)
+	@unlink $(SUBDIR) || true
 	@ln -s . $(SUBDIR)
 	zip -9r git-in-git $(ZIPS) --exclude $(SUBDIR)/$(SUBDIR)
-	@rm -f $(SUBDIR)
+	@unlink $(SUBDIR)
 
 %/:
 	mkdir $@
