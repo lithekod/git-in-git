@@ -3,6 +3,7 @@ INIT=./init.sh
 ANS=./answers.sh
 CHK=./check.sh
 TMP=.tmp
+SLIDES=slides.pdf
 
 SHELL=sh
 FILES := 01-something-to-add/
@@ -13,17 +14,25 @@ FILES += 04-branching-out/
 ZIPS := $(patsubst %,$(SUBDIR)/%,$(FILES))
 CHECKS := $(patsubst %,%/c,$(FILES))
 
-.PHONY: all test clean zip
+.PHONY: all solve test clean clean-local zip $(SLIDES)
 
-all: $(FILES)
+all: $(FILES) $(SLIDES)
+	make -C presentation all
+
+$(SLIDES):
+	make -C presentation handout.pdf
+	cp presentation/handout.pdf $(SLIDES)
 
 check: $(CHECKS)
 
-clean:
+clean-local:
 	rm -rf $(FILES)
 	rm -f git-in-git.zip
 
-zip:   all
+clean: clean-local
+	make -C presentation clean
+
+zip: all
 	@echo
 	@echo == Zipping ==
 	@unlink $(SUBDIR) || true
@@ -31,7 +40,7 @@ zip:   all
 	zip -9r git-in-git $(ZIPS) --exclude $(SUBDIR)/$(SUBDIR)
 	@unlink $(SUBDIR)
 
-%/:
+%/: clean-local
 	mkdir $@
 	$(SHELL) $(INIT) $@
 

@@ -1,9 +1,12 @@
-.PHONY: main.pdf all clean
+SRC = main.tex handout.tex
+PDF = $(SRC:.tex=.pdf)
 
-all: main.pdf
+.PHONY: all clean
 
-main.pdf: main.tex
-	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make $<
+all: $(PDF)
+
+%.pdf: %.tex
+	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make -quiet $<
 
 clean:
 	latexmk -CA
