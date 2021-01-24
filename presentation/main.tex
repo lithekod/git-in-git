@@ -960,6 +960,75 @@ Signed-off-by: Junio C Hamano <gitster@pobox.com>
 \end{frame}
 
 \begin{frame}[fragile]
+  \frametitle{Project management -- git $\sim$flow$\sim$ visualized}
+  \tikzset{->,        % edges are arrows
+           >=stealth  % arrow heads are bold
+  }
+
+  \centering
+  \begin{tikzpicture}[
+      dot/.style={circle, draw=black, fill=black, minimum size=1.5mm, inner sep=0pt},
+      ]
+      \node at (0,0) [dot]  (A) {};
+      \node at (1,-1) [dot] (B) {};
+      \coordinate [label=right:{A}] (branchA) at (B);
+      \draw [->] (A) -- (B);
+      \node at (2,0) [dot]  (C) {};
+      \draw [->] (B) -- (C);
+      \draw [->] (A) -- (C);
+      \coordinate [label=right:\texttt{master}] (master) at (7,0);
+      \coordinate [label=right:{Feature branches}] (master) at (7,-1);
+      \pause{}
+      \node at (3,-1) [dot] (D) {};
+      \draw [->] (C) -- (D);
+      \node at (4,-1) [dot] (E) {};
+      \coordinate [label=right:{B}] (branchB) at (E);
+      \draw [->] (D) -- (E);
+      \node at (5,0) [dot]  (F) {};
+      \draw [->] (E) -- (F);
+      \draw [->] (C) -- (F);
+
+      \pause{}
+
+      \node at (1,-2) [dot] (H) {};
+      \draw [->] (A) -- (H);
+      \node at (2,-2) [dot] (I) {};
+      \draw [->] (H) -- (I);
+      \node at (3,-2) [dot] (J) {};
+      \coordinate [label=right:{C}] (branchC) at (J);
+      \draw [->] (I) -- (J);
+      \node at (4,0) [dot]  (K) {};
+      \draw [->] (J) -- (K);
+      \coordinate [label=right:{More feature branches}] (master) at (7,-2);
+      \pause{}
+      \node at (6,-1) [dot] (G) {};
+      \draw [->] (F) -- (G);
+      \draw [->] (F) -- (7,0);
+      \draw [->] (6,-1) -- (7,-1);
+      \draw [->] (6,-2) -- (7,-2);
+
+      \node at (6,-2) [dot] (M) {};
+      \draw [->] (F) -- (M);
+
+
+    % \node (edit) {Edit};
+    % \node (add) [right=of edit] {\texttt{git add}};
+    % \node (commit) [right=of add] {\texttt{git commit}};
+    % \node (push) [right=of commit] {\texttt{git push}};
+
+    % \draw (edit) edge (add);
+    % \draw (add) edge (commit);
+    % \draw (commit) edge (push);
+
+    % \draw (edit) edge[loop above] (edit);
+    % \draw (add) edge[loop above] (add);
+
+    % \draw (commit) edge[bend left, below] (edit);
+    % \draw (push) edge[bend left, below] (edit);
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}[fragile]
   \frametitle{Project management -- CI} % not always needed etc
 
   \keyword{Idea} \\
@@ -1039,7 +1108,7 @@ Signed-off-by: Junio C Hamano <gitster@pobox.com>
   \frametitle{Finding help}
 
   Human contact \\
-  \hspace{1em} LiTHe kod meetups -- tusedays 17:15-late,  \\
+  \hspace{1em} LiTHe kod's meetups -- Tuesdays from 17:15 late into the night, \\
   \vspace{1em}
 
   In your terminal at your fingetips \\
@@ -1054,7 +1123,6 @@ Signed-off-by: Junio C Hamano <gitster@pobox.com>
   \hspace{1em} \url{lithekod.se/gitcheatsheet/} -- LiTHe kods cheat-sheet \\
   \hspace{1em} \url{shorturl.at/jpCDQ} -- GitHub's cheat-sheet \\
   \hspace{1em} \url{shorturl.at/tuLO3} -- Flowchart by Justin Hileman for messes\\
-  %TODO meetups
 
 \end{frame}
 
@@ -1064,5 +1132,4 @@ Signed-off-by: Junio C Hamano <gitster@pobox.com>
     \small Brought to you by LiTHe kod
   \end{center}
 \end{frame}
-
 \end{document}
