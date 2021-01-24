@@ -18,7 +18,7 @@ ZIPS += $(SUBDIR)/$(ANS)
 ZIPS += $(SUBDIR)/$(CHK)
 CHECKS := $(patsubst %,%/c,$(FILES))
 
-.PHONY: all solve test clean clean-local zip $(SLIDES)
+.PHONY: all solve test clean clean-local zip $(SLIDES) check
 
 all: $(FILES) $(SLIDES)
 	make -C presentation all
