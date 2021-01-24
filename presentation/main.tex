@@ -12,8 +12,8 @@
 \date{2021}
 
 \newcommand{\temporalgray}[2]{\temporal<#1>{\phantom{#2}}{#2}{\textcolor{gray}{#2}}}
-
 \newcommand{\keyword}[1]{\hspace{-1.0em}\colorbox{black}{\textcolor{white}{\textbf{#1}\vphantom{Ep}}}\vspace{0.2em}} % yikes
+\newcommand{\command}[1]{\texttt{\textcolor{gray}{\$} {#1}}}
 
 \begin{document}
 
@@ -62,18 +62,18 @@
   \frametitle{Getting started -- Telling git who you are}
 
   Your name:\\
-  \texttt{\$ git config --global user.name "kodapa"} \\[1em]
+  \command{git config --global user.name "kodapa"} \\[1em]
 
   Your email:\\
-  \texttt{\$ git config --global user.email "kodapa@lithekod.se"} \\
+  \command{git config --global user.email "kodapa@lithekod.se"} \\
 
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Getting started -- Getting your repository}
   \begin{tabular}{ll}
-    \texttt{git clone} & \\
-    \texttt{git init} & \\
+    \command{git clone} & \\
+    \command{git init} & \\
   \end{tabular}
 \end{frame}
 
@@ -97,17 +97,17 @@
   \frametitle{Getting to know the family}
 
   \begin{tabular}{ll}
-    \texttt{git add} & I want to keep these! \\
-    \texttt{git commit} & I did a thing! \\
-    \texttt{git push} & I want to share this! \\ % mention pull
+    \command{git add} & I want to keep these! \\
+    \command{git commit} & I did a thing! \\
+    \command{git push} & I want to share this! \\ % mention pull
   \end{tabular}
   \\ [2.0em]
 
-  \texttt{add}, \texttt{commit}, \texttt{push} and \texttt{pull}$^*$
+  \texttt{add}, \texttt{commit}, \texttt{push} and \texttt{pull}\textsuperscript{*}
   are the four horsemen of version control. The bread and butter.
   \\ [2.0em]
 
-  \small $^*$\texttt{pull} will be discussed later.
+  \small \textsuperscript{*}\texttt{pull} will be discussed later.
 
 \end{frame}
 
@@ -121,10 +121,10 @@
   \keyword{How}\\
   \hspace{-1.0em}
   \begin{tabular}{ll}
-    \texttt{git add hello.txt} & Stage the specified file \\
-    \texttt{git add *.py} & Stage all python-files \\
-    \texttt{git add -i} & Interactive prompt for adding \\
-    \texttt{git add -p} & Add a part of a file \\
+    \command{git add hello.txt} & Stage the specified file \\
+    \command{git add *.py} & Stage all python-files \\
+    \command{git add -i} & Interactive prompt for adding \\
+    \command{git add -p} & Add a part of a file \\
   \end{tabular}
   \vspace{0.5em}
 
@@ -132,7 +132,7 @@
   Silence.
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Getting to know the family -- commit}
   \keyword{When}\\
     You have added a \emph{relevant} group of changes. Making
@@ -142,17 +142,19 @@
   \keyword{How}\\
   \hspace{-1.0em}
   \begin{tabular}{ll}
-    \texttt{git commit} & Commit the added file(s) \\
-    \texttt{git commit --amend} & Update the previous commit \\
-    \texttt{git commit -m "msg"} & Specify a message, skips the editor \\
+    \command{git commit} & Commit the added file(s) \\
+    \command{git commit --amend} & Update the previous commit \\
+    \command{git commit -m "msg"} & Specify a message, skips the editor \\
   \end{tabular}
   \vspace{0.5em}
 
   \keyword{Expect}\\
   A texteditor pops up, where you write a descriptive commit message. And
   output similar to: \\
-  \texttt{[master 3b65386] A descriptive message} \\
-  \texttt{1 file changed, 1 insertion(+)}
+\begin{verbatim}
+[master 3b65386] A descriptive message
+1 file changed, 1 insertion(+)
+\end{verbatim}
 
 \end{frame}
 
@@ -167,7 +169,7 @@
   \keyword{How}\\
   \hspace{-1.0em}
   \begin{tabular}{ll}
-    \texttt{git push} & Tell the server about your changes \\
+    \command{git push} & Tell the server about your changes \\
   \end{tabular}
   \vspace{0.5em}
 
@@ -189,10 +191,10 @@ To github.com:kodapan/verkligt.git
   \frametitle{Commands for information}
 
   \begin{tabular}{ll}
-    \texttt{git status} & What is happening? \\
-    \texttt{git diff} & What has changed? \\
-    \texttt{git log} & What has happened? \\
-    \texttt{git show} & What changed over there? \\
+    \command{git status} & What is happening? \\
+    \command{git diff} & What has changed? \\
+    \command{git log} & What has happened? \\
+    \command{git show} & What changed over there? \\
   \end{tabular}
 
 \end{frame}
@@ -205,7 +207,7 @@ To github.com:kodapan/verkligt.git
   \vspace{0.5em}
 
   \keyword{How}\\
-  \texttt{\$ git status}
+  \command{git status}
   \vspace{0.5em}
 
   \keyword{Expect}\\
@@ -277,7 +279,7 @@ no changes added to commit (use "git add" and/or
   \vspace{0.5em}
 
   \keyword{How}\\
-  \texttt{\$ git diff}
+  \command{git diff}
   \vspace{0.5em}
 
   \keyword{Expect}\\
@@ -321,9 +323,9 @@ index a40ce22..ea7235e 100644
   \vspace{0.5em}
 
   \keyword{How}\\
-  \texttt{\$ git log}
+  \command{git log}
 
-  \texttt{\$ git log <branch>}
+  \command{git log <branch>}
   \vspace{0.5em}
 
   \keyword{Expect}\\
@@ -382,7 +384,7 @@ $ git log --graph
   \vspace{0.5em}
 
   \keyword{How}\\
-  \texttt{\$ git show <commit>}
+  \command{git show <commit>}
   \vspace{0.5em}
 
   \keyword{Expect}\\
@@ -466,9 +468,9 @@ index a40ce22..ea7235e 100644
   \frametitle{Branching out}
 
   \begin{tabular}{ll}
-    \texttt{git checkout} & Jump to a branch! \\
-    \texttt{git branch} & Manage branches! \\
-    \texttt{git log} & Find commits to jump to! \\
+    \command{git checkout} & Jump to a branch! \\
+    \command{git branch} & Manage branches! \\
+    \command{git log} & Find commits to jump to! \\
   \end{tabular}
 
 \end{frame}
@@ -476,20 +478,20 @@ index a40ce22..ea7235e 100644
 \begin{frame}
   \frametitle{Branching out -- checkout}
 
-    \texttt{git checkout} - The sonic screwdriver of git \\[1em]
+    \command{git checkout} - The sonic screwdriver of git \\[1em]
     Used to:
     \begin{itemize}
         \item Jump to branches
         \begin{itemize}
-            \item[] \texttt{git checkout mybranch}
+            \item[] \command{git checkout mybranch}
         \end{itemize}
         \item Create branches
         \begin{itemize}
-            \item[] \texttt{git checkout -b newbranch}
+            \item[] \command{git checkout -b newbranch}
         \end{itemize}
         \item Undo changes
         \begin{itemize}
-            \item[] \texttt{git checkout -- file.txt}
+            \item[] \command{git checkout -- file.txt}
         \end{itemize}
     \end{itemize}
 
@@ -498,20 +500,20 @@ index a40ce22..ea7235e 100644
 \begin{frame}
   \frametitle{Branching out -- branch}
 
-    \texttt{git branch} - Show and manage branches \\[1em]
+    \command{git branch} - Show and manage branches \\[1em]
     Used to:
     \begin{itemize}
         \item Show which branches exist
         \begin{itemize}
-            \item[] \texttt{git branch}
+            \item[] \command{git branch}
         \end{itemize}
         \item Create branches
         \begin{itemize}
-            \item[] \texttt{git branch newbranch}
+            \item[] \command{git branch newbranch}
         \end{itemize}
         \item Delete branches
         \begin{itemize}
-            \item[] \texttt{git branch -d mergedbranch}
+            \item[] \command{git branch -d mergedbranch}
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -521,8 +523,8 @@ index a40ce22..ea7235e 100644
 
     Using \texttt{git log} it is possible to travel in time. \\[1em]
 
-    \only<1>{\texttt{git checkout <hash>}}
-    \only<2->{\texttt{git checkout 479ad80ddf...}} \\[3em]
+    \only<1>{\command{git checkout <hash>}}
+    \only<2->{\command{git checkout 479ad80ddf...}} \\[3em]
 
     \pause[3]
 
@@ -540,8 +542,8 @@ index a40ce22..ea7235e 100644
   \frametitle{Branching in}
 
   \begin{tabular}{ll}
-    \texttt{git merge} & I want both this and that! \\
-    \texttt{git pull} & I want \emph{your} stuff! \\
+    \command{git merge} & I want both this and that! \\
+    \command{git pull} & I want \emph{your} stuff! \\
   \end{tabular}
 
 \end{frame}
@@ -551,7 +553,7 @@ index a40ce22..ea7235e 100644
 
     Combine two or more branches into one! \\[1em]
 
-    \texttt{git merge featurebranch} \\[3em]
+    \command{git merge featurebranch} \\[3em]
 
     \pause
 
@@ -597,7 +599,7 @@ index a40ce22..ea7235e 100644
   \frametitle{Branching in -- pull}
     Get the latest changes from the upstream! \\[1em]
 
-    \texttt{git pull} \\[3em]
+    \command{git pull} \\[3em]
 
     \pause
 
@@ -684,9 +686,9 @@ index a40ce22..ea7235e 100644
   want to get more use out of git.
   \vspace{1em}
   
-  \texttt{git worktree} -- Looking at other branches \\
-  \texttt{git cherry-pick} -- Stealing commits \\
-  \texttt{git stash} -- WIP commits \\
+  \command{git worktree} -- Looking at other branches \\
+  \command{git cherry-pick} -- Stealing commits \\
+  \command{git stash} -- WIP commits \\
     
 \end{frame}
 
@@ -700,10 +702,10 @@ index a40ce22..ea7235e 100644
   \vspace{1em}
 
   In your terminal at your fingetips \\
-  \hspace{1em} \texttt{\$ man git} -- Exhaustive, good if you know what you want \\
-  \hspace{1em} \texttt{\$ man giteveryday} -- Short description of commands \\
-  \hspace{1em} \texttt{\$ man gittutorial} -- A guide for getting started \\
-  \hspace{1em} \texttt{\$ man git commit} -- Exhaustive information about the `commit' subcommand\\
+  \hspace{1em} \command{man git} -- Exhaustive, good if you know what you want \\
+  \hspace{1em} \command{man giteveryday} -- Short description of commands \\
+  \hspace{1em} \command{man gittutorial} -- A guide for getting started \\
+  \hspace{1em} \command{man git commit} -- Exhaustive information about the `commit' subcommand\\
   \vspace{1em}
 
   From the web, just a GET away \\
