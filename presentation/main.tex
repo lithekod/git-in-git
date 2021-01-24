@@ -116,7 +116,7 @@
   \keyword{When}\\
     You have made changes that you want to commit.
     Usually the first command in a series of commands.
-  \\ [0.5em]
+  \vspace{0.5em}
 
   \keyword{How}\\
   \hspace{-1.0em}
@@ -126,7 +126,7 @@
     \texttt{git add -i} & Interactive prompt for adding \\
     \texttt{git add -p} & Add a part of a file \\
   \end{tabular}
-  \\ [0.5em]
+  \vspace{0.5em}
 
   \keyword{Expect}\\
   Silence.
@@ -137,7 +137,7 @@
   \keyword{When}\\
     You have added a \emph{relevant} group of changes. Making
     the code ready for a new change. Preferably as small as possible.
-  \\ [0.5em]
+  \vspace{0.5em}
 
   \keyword{How}\\
   \hspace{-1.0em}
@@ -146,7 +146,7 @@
     \texttt{git commit --amend} & Update the previous commit \\
     \texttt{git commit -m "msg"} & Specify a message, skips the editor \\
   \end{tabular}
-  \\ [0.5em]
+  \vspace{0.5em}
 
   \keyword{Expect}\\
   A texteditor pops up, where you write a descriptive commit message. And
@@ -162,14 +162,14 @@
     After you've made commits you are happy with, or if the computer
     is about to blow up. If you haven't pushed, no one has to know what
     happened here.\\
-  \\ [0.5em]
+  \vspace{0.5em}
 
   \keyword{Push}\\
   \hspace{-1.0em}
   \begin{tabular}{ll}
     \texttt{git push} & Tell the server about your changes \\
   \end{tabular}
-  \\ [0.5em]
+  \vspace{0.5em}
 
   \keyword{Expect}\\ [0.1em]
   \small
@@ -201,11 +201,11 @@
 
   \keyword{When}\\
   Always! Guaranteed to not break anything.
-  \\[0.5em]
+  \vspace{0.5em}
 
   \keyword{How}\\
   \texttt{\$ git status}
-  \\[0.5em]
+  \vspace{0.5em}
 
   \keyword{Expect}\\
   Some text explaining what's currently happening.
@@ -273,11 +273,11 @@ no changes added to commit (use "git add" and/or
 
   \keyword{When}\\
   You want to see the difference between two things. Very versatile.
-  \\[0.5em]
+  \vspace{0.5em}
 
   \keyword{How}\\
   \texttt{\$ git diff}
-  \\[0.5em]
+  \vspace{0.5em}
 
   \keyword{Expect}\\
   A so called \emph{diff}.
@@ -317,13 +317,13 @@ index a40ce22..ea7235e 100644
 
   \keyword{When}\\
   You want to see an overview of what's changed over time.
-  \\[0.5em]
+  \vspace{0.5em}
 
   \keyword{How}\\
   \texttt{\$ git log}
 
   \texttt{\$ git log <branch>}
-  \\[0.5em]
+  \vspace{0.5em}
 
   \keyword{Expect}\\
   The log.
@@ -378,11 +378,11 @@ $ git log --graph
 
   \keyword{When}\\
   You want more information about a specific commit.
-  \\[0.5em]
+  \vspace{0.5em}
 
   \keyword{How}\\
   \texttt{\$ git show <commit>}
-  \\[0.5em]
+  \vspace{0.5em}
 
   \keyword{Expect}\\
   Log message and diff output for the commit.
