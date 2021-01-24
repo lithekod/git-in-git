@@ -196,9 +196,23 @@
 
 \end{frame}
 
+\begin{frame}
+  \frametitle{Commands for information -- status}
+
+  \keyword{When}\\
+  Always! Guaranteed to not break anything.
+  \\[0.5em]
+
+  \keyword{How}\\
+  \texttt{\$ git status}
+  \\[0.5em]
+
+  \keyword{Expect}\\
+  Some text explaining what's currently happening.
+\end{frame}
+
 \begin{frame}[fragile]
   \frametitle{Commands for information -- status}
-  \framesubtitle{How's it looking right now?}
 
 \begin{verbatim}
 $ git status
@@ -212,7 +226,6 @@ nothing to commit, working tree clean
 
 \begin{frame}[fragile]
   \frametitle{Commands for information -- status}
-  \framesubtitle{How's it looking right now?}
 
 \begin{verbatim}
 $ vim my_file.py
@@ -255,9 +268,23 @@ no changes added to commit (use "git add" and/or
 \end{verbatim}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Commands for information -- diff}
+
+  \keyword{When}\\
+  You want to see the difference between two things. Very versatile.
+  \\[0.5em]
+
+  \keyword{How}\\
+  \texttt{\$ git diff}
+  \\[0.5em]
+
+  \keyword{Expect}\\
+  A so called \emph{diff}.
+\end{frame}
+
 \begin{frame}[fragile]
   \frametitle{Commands for information -- diff}
-  \framesubtitle{What's new?}
 
 \begin{verbatim}
 $ git diff
@@ -285,9 +312,28 @@ index a40ce22..ea7235e 100644
 \end{Verbatim}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Commands for information -- log}
+
+  \keyword{When}\\
+  You want to see an overview of what's changed over time.
+  \\[0.5em]
+
+  \keyword{How}\\
+  \texttt{\$ git log}
+
+  \texttt{\$ git log <branch>}
+  \\[0.5em]
+
+  \keyword{Expect}\\
+  The log.
+\end{frame}
+
 \begin{frame}[fragile]
   \frametitle{Commands for information -- log}
 \begin{Verbatim}
+$ git add my_file.py
+$ git commit
 $ git log
 \end{Verbatim}
 \pause{}
@@ -308,12 +354,49 @@ Date:   Fri Jan 22 17:43:14 2021 +0100
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Commands for information -- log --graph}
+  \frametitle{Commands for information -- log \texttt{--}graph}
 \begin{Verbatim}[commandchars=\\\{\}]
+
+
 $ git log --graph
 * commit 4582c8c2c41d6c7c46bab45d1aae807afacc357e
 | Author: Kodapan <kodapan@lithekod.se>
-| Date:   Sat Jan 23 01:13:54 2021 +0100
+| Date:   Fri Jan 22 17:48:27 2021 +0100
+| 
+|     add proper punctuation
+| 
+* commit 8e94d9e8bb33496484c80eaff68541dc0b8cccbc
+  Author: Kodapan <kodapan@lithekod.se>
+  Date:   Fri Jan 22 17:43:14 2021 +0100
+  
+      my first commit
+\end{Verbatim}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Commands for information -- show}
+
+  \keyword{When}\\
+  You want more information about a specific commit.
+  \\[0.5em]
+
+  \keyword{How}\\
+  \texttt{\$ git show <commit>}
+  \\[0.5em]
+
+  \keyword{Expect}\\
+  Log message and diff output for the commit.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Commands for information -- show}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+
+$ git log --graph
+* commit 4582c8c2c41d6c7c46bab45d1aae807afacc357e
+| Author: Kodapan <kodapan@lithekod.se>
+| Date:   Fri Jan 22 17:48:27 2021 +0100
 | 
 |     add proper punctuation
 | 
@@ -326,12 +409,14 @@ $ git log --graph
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Commands for information -- log --graph}
+  \frametitle{Commands for information -- show}
 \begin{Verbatim}[commandchars=\\\{\}]
+
+
 $ git log --graph
 * commit \textcolor{red}{4582}c8c2c41d6c7c46bab45d1aae807afacc357e
 | Author: Kodapan <kodapan@lithekod.se>
-| Date:   Sat Jan 23 01:13:54 2021 +0100
+| Date:   Fri Jan 22 17:48:27 2021 +0100
 | 
 |     add proper punctuation
 | 
@@ -369,9 +454,7 @@ index a40ce22..ea7235e 100644
  def main():
 \textcolor{red}{-    print("Hello World")}
 \textcolor{blue}{+    print("Hello World!")}
- 
- if __name__ == "__main__":
-     main()
+...
 \end{Verbatim}
 \end{frame}
 
