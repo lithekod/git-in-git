@@ -4,7 +4,10 @@
 
 \usepackage{fancyvrb}
 \usepackage{hyperref}
+\usepackage{tikz}
 \usepackage{xcolor}
+
+\usetikzlibrary{arrows, positioning}
 
 \title[git]{git --- an introduction}
 \subtitle{Learning to commit}
@@ -108,6 +111,29 @@
   \\ [2.0em]
 
   \small \textsuperscript{*}\texttt{pull} will be discussed later.
+
+  \vspace{2em}
+
+  \tikzset{->,        % edges are arrows
+           >=stealth  % arrow heads are bold
+  }
+
+  \begin{tikzpicture}
+    \node (edit) {Edit};
+    \node (add) [right=of edit] {\texttt{git add}};
+    \node (commit) [right=of add] {\texttt{git commit}};
+    \node (push) [right=of commit] {\texttt{git push}};
+
+    \draw (edit) edge (add);
+    \draw (add) edge (commit);
+    \draw (commit) edge (push);
+
+    \draw (edit) edge[loop above] (edit);
+    \draw (add) edge[loop above] (add);
+
+    \draw (commit) edge[bend left, below] (edit);
+    \draw (push) edge[bend left, below] (edit);
+  \end{tikzpicture}
 
 \end{frame}
 
