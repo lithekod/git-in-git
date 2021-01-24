@@ -932,10 +932,61 @@ Signed-off-by: Junio C Hamano <gitster@pobox.com>
 
 \begin{frame}[fragile]
   \frametitle{Project management -- CI} % not always needed etc
+
+  \keyword{Idea} \\
+  Make a server deploy your code. Run some unit-tests so you don't have to.
+  \vspace{1em}
+
+  \keyword{Pros}
+  \begin{itemize}[<+->]
+    \item No need to run tests
+    \item Easier and faster to spot faults
+    \item Convenient
+  \end{itemize}
+  \vspace{1em}
+
+  \pause
+  Might be a bit overkill for a lab, but amazing for projects.
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Project management -- CI usecases} % not always needed etc
+
+  Some simple usecases for CI, can easily be set up.
+  \vspace{1em}
+  \begin{itemize}
+    \item Try to compile your project
+    \item Run automated tests
+    \item Check the formatting of the code
+    \item Compile \LaTeX{} to PDFs
+  \end{itemize}
+
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Project management -- gitignore}
+
+  \keyword{Idea} \\
+  Tell git to ignore files. Lets you be lazy.
+  \vspace{1em}
+
+  \keyword{Ignore}
+  \begin{itemize}[<+->]
+    \item Large binary files \textsuperscript{*}
+    \item Temporary files \& log files
+    \item Build output
+    \item Editor files \textsuperscript{**}
+  \end{itemize}
+  \vspace{1em}
+
+  \pause
+  More `guidelines' than actual rules.
+  \vspace{1em}
+  \pause
+
+  \small \textsuperscript{*} Game developers beware \\
+  \small \textsuperscript{**} Some editors e.g. vscode and JetBrains like to live in git-repos \\
 \end{frame}
 
 \section{Final stretch}
@@ -976,6 +1027,13 @@ Signed-off-by: Junio C Hamano <gitster@pobox.com>
   \hspace{1em} \url{shorturl.at/tuLO3} -- Flowchart by Justin Hileman for messes\\
   %TODO meetups
 
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{center}
+    \Huge Thanks for your time! \\
+    \small Brought to you by LiTHe-kod
+  \end{center}
 \end{frame}
 
 \end{document}
