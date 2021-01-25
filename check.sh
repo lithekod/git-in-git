@@ -96,6 +96,19 @@ case $1 in
     exit 0
 ;;
 
+6*|06*)
+    cd 06-*
+
+    if ! git diff --quiet
+    then
+        echo "There are still conflicts"
+        exit 1
+    fi
+
+    echo "SOLVED"
+    exit 0
+;;
+
 esac
 
 echo "Don't know what task that is..."

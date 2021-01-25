@@ -84,6 +84,38 @@ case $1 in
     exit 0
 ;;
 
+6*|06*)
+    cd 06-*
+    rm -rf *
+
+    echo "def f(): return 1" > code.py
+    echo >> code.py
+    echo "print(f())" >> code.py
+
+    git init
+    git add code.py
+    git commit -m "Inital commit"
+
+    git checkout -b implement-g
+    echo >> code.py
+    echo "def g(): return 2" > code.py
+    echo >> code.py
+    echo "print(g())" >> code.py
+    git commit code.py -m "Implement g"
+
+    git checkout master
+
+    echo >> code.py
+    echo "def h(): return 3" > code.py
+    echo >> code.py
+    echo "print(h())" >> code.py
+    git commit code.py -m "Implement h"
+
+    git merge implement-g
+
+    exit 0
+;;
+
 esac
 
 echo "Don't know what task that is..."
