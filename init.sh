@@ -2,8 +2,13 @@
 
 case $1 in
 1*|01*)
-    cd 01-*
-    rm -rf *
+    if cd 01-*
+    then
+        rm -rf * .git
+    else
+        echo "Could not find a directory beginning with 01-"
+        exit 1
+    fi
 
     git init
     echo "I'm a text file!" > hello.txt
@@ -15,8 +20,13 @@ case $1 in
 ;;
 
 2*|02*)
-    cd 02-*
-    rm -rf *
+    if cd 02-*
+    then
+        rm -rf * .git
+    else
+        echo "Could not find a directory beginning with 02-"
+        exit 1
+    fi
 
     echo "I'm a text file!" > hello.txt
 
@@ -28,8 +38,13 @@ case $1 in
 ;;
 
 3*|03*)
-    cd 03-*
-    rm -rf *
+    if cd 03-*
+    then
+        rm -rf * .git
+    else
+        echo "Could not find a directory beginning with 03-"
+        exit 1
+    fi
 
     echo "I'm a text file!" > hello.txt
 
@@ -48,8 +63,13 @@ case $1 in
 ;;
 
 4*|04*)
-    cd 04-*
-    rm -rf *
+    if cd 04-*
+    then
+        rm -rf * .git
+    else
+        echo "Could not find a directory beginning with 04-"
+        exit 1
+    fi
 
     echo "I'm a text file!" > hello.txt
 
@@ -62,8 +82,13 @@ case $1 in
 ;;
 
 5*|05*)
-    cd 05-*
-    rm -rf *
+    if cd 05-*
+    then
+        rm -rf * .git
+    else
+        echo "Could not find a directory beginning with 05-"
+        exit 1
+    fi
 
     echo "def f(): pass # Not implemented" > code.py
     echo >> code.py
@@ -85,8 +110,13 @@ case $1 in
 ;;
 
 6*|06*)
-    cd 06-*
-    rm -rf *
+    if cd 06-*
+    then
+        rm -rf * .git
+    else
+        echo "Could not find a directory beginning with 06-"
+        exit 1
+    fi
 
     echo "def f(): return 1" > code.py
     echo >> code.py

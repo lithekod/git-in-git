@@ -3,7 +3,7 @@
 case $1 in
 1*|01*)
     cd 01-*
-    
+
     if ! git diff --quiet
     then
         echo "There are unstaged changes"
