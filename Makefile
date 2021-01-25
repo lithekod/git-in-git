@@ -52,6 +52,7 @@ zip: all
 	$(SHELL) $(INIT) $@
 
 %/c: %/
+	chmod +x $(ANS)
 	$(SHELL) -c "$(ANS) $< > $(TMP)"
 	$(SHELL) -c "cd $<; $(SHELL) ../$(TMP)"
 	$(SHELL) -c "$(CHK) $<"
