@@ -18,6 +18,7 @@ ZIPS += $(SUBDIR)/$(SLIDES)
 ZIPS += $(SUBDIR)/$(INIT)
 ZIPS += $(SUBDIR)/$(ANS)
 ZIPS += $(SUBDIR)/$(CHK)
+ZIPS += $(SUBDIR)/instructions.txt
 CHECKS := $(patsubst %,%/c,$(FILES))
 
 .PHONY: all solve test clean clean-local zip $(SLIDES) check
