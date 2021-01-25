@@ -74,7 +74,9 @@ to merge it into another branch. Here the task is to merge the branch
 #                                      6                                      #
 ###############################################################################
 
-Oh no!
+Oh no! Someone tried to merge and it ended up in a conflict! You need to
+resolve it somehow. `git status` will tell you everything you need to know.
+There is no need to push anything after you are done.
 
 
 -- tip: View this document more easily using less: `less instructions.txt`

@@ -1,6 +1,6 @@
 SUBDIR=ex
 INIT=./init.sh
-ANS=./answers.sh
+ANS=./answer.sh
 CHK=./check.sh
 TMP=.tmp
 SLIDES=slides.pdf
