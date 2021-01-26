@@ -5,7 +5,7 @@ PDF = $(SRC:.tex=.pdf)
 
 all: $(PDF)
 
-%.pdf: %.tex
+%.pdf: %.tex main.tex
 	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make -quiet $<
 
 clean:
