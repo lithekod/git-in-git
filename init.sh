@@ -95,6 +95,7 @@ case $1 in
     echo "print(f())" >> code.py
 
     git init
+    git checkout -b master
     git add code.py
     git commit -m "Inital commit"
 
