@@ -2,7 +2,7 @@ Welcome to LiTHe kod's interactive git excercises!
 
 
 View the problem statement here and cd into the corresponding folder to start.
-When you are done with a exercise, check the solution by running
+When you are done with an exercise, check the solution by running
 
 ./check.sh <folder>
 
