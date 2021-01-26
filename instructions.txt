@@ -1,0 +1,82 @@
+Welcome to LiTHe kod's interactive git excercises!
+
+
+View the problem statement here and cd into the corresponding folder to start.
+When you are done with an exercise, check the solution by running
+
+./check.sh <folder>
+
+For example, to check your solution to excercise 02-learning-to-commit use:
+
+./check 2
+
+
+You can also view the answer for a particular exercise by running:
+
+./answer.sh <folder>
+
+Ex.
+
+./answer.sh 3
+
+
+To restart a exercise, run the following:
+
+./init.sh <folder>
+
+Ex.
+
+./init.sh 6
+
+
+
+###############################################################################
+#                                      1                                      #
+###############################################################################
+
+In this excercise the objective is to stage the file in the folder.
+The easiest way to stage a file is to use `git add`.
+
+###############################################################################
+#                                      2                                      #
+###############################################################################
+
+Here you need to create a new commit in some way. Most often a commit is
+created after changing the contents of one or several files. Making use of
+`git add` and `git commit` is required.
+
+###############################################################################
+#                                      3                                      #
+###############################################################################
+
+Sometimes you forget to add something to a commit. Thankfully git has
+functionality to do just that. In this excercise you need to add more changes
+to the last commit. This can be done in several ways, however, the most
+straightforward way is to use `git commit --amend`.
+
+###############################################################################
+#                                      4                                      #
+###############################################################################
+
+Branches is the key to working together with other people on projects. In this
+excercise your task is to create and move to a new branch. Using some
+combination of `git branch` and `git checkout` is a good idea.
+
+###############################################################################
+#                                      5                                      #
+###############################################################################
+
+When you are finished with some feature on a branch, the next step is usually
+to merge it into another branch. Here the task is to merge the branch
+`implement-f` into the branch `master` (the original branch).
+
+###############################################################################
+#                                      6                                      #
+###############################################################################
+
+Oh no! Someone tried to merge and it ended up in a conflict! You need to
+resolve it somehow. `git status` will tell you everything you need to know.
+There is no need to push anything after you are done.
+
+
+-- tip: View this document more easily using less: `less instructions.txt`

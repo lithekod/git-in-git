@@ -1,6 +1,6 @@
 SUBDIR=ex
 INIT=./init.sh
-ANS=./answers.sh
+ANS=./answer.sh
 CHK=./check.sh
 TMP=.tmp
 SLIDES=slides.pdf
@@ -10,11 +10,18 @@ FILES := 01-something-to-add/
 FILES += 02-learning-to-commit/
 FILES += 03-changing-the-past/
 FILES += 04-branching-out/
+FILES += 05-merging-the-feature/
+FILES += 06-conflict-resolution/
 
 ZIPS := $(patsubst %,$(SUBDIR)/%,$(FILES))
+ZIPS += $(SUBDIR)/$(SLIDES)
+ZIPS += $(SUBDIR)/$(INIT)
+ZIPS += $(SUBDIR)/$(ANS)
+ZIPS += $(SUBDIR)/$(CHK)
+ZIPS += $(SUBDIR)/instructions.txt
 CHECKS := $(patsubst %,%/c,$(FILES))
 
-.PHONY: all solve test clean clean-local zip $(SLIDES)
+.PHONY: all solve test clean clean-local zip $(SLIDES) check
 
 all: $(FILES) $(SLIDES)
 	make -C presentation all
@@ -35,16 +42,17 @@ clean: clean-local
 zip: all
 	@echo
 	@echo == Zipping ==
-	@rm -f $(SUBDIR)
+	@unlink $(SUBDIR) || true
 	@ln -s . $(SUBDIR)
 	zip -9r git-in-git $(ZIPS) --exclude $(SUBDIR)/$(SUBDIR)
-	@rm -f $(SUBDIR)
+	@unlink $(SUBDIR)
 
 %/: clean-local
 	mkdir $@
 	$(SHELL) $(INIT) $@
 
 %/c: %/
+	chmod +x $(ANS)
 	$(SHELL) -c "$(ANS) $< > $(TMP)"
 	$(SHELL) -c "cd $<; $(SHELL) ../$(TMP)"
 	$(SHELL) -c "$(CHK) $<"
