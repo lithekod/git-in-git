@@ -706,9 +706,30 @@ index a40ce22..ea7235e 100644
     This may also result in \alert{merge conflicts}. \\[1em]
 \end{frame}
 
-%%% Working with others
+\begin{frame}[fragile]
+  \frametitle{Basic commans -- Summary}
+  \begin{tabular}{ll}
+    \keyword{Basic} & \\
+    \command{git add} & I want to keep these! \\
+    \command{git commit} & I did a thing! \\
+    \command{git push} & I want to share this! \\ % mention pull
 
-% Pause? 5-10 minutes
+    \keyword{Informative} & \\
+    \command{git status} & What is happening? \\
+    \command{git diff} & What has changed? \\
+    \command{git log} & What has happened? \\
+    \command{git show} & What changed over there? \\
+
+    \keyword{Create branch} & \\
+    \command{git checkout} & Jump to a branch! \\
+    \command{git branch} & Manage branches! \\
+    \command{git log} & Find commits to jump to! \\
+
+    \keyword{Combine branch} & \\
+    \command{git merge} & I want both this and that! \\
+    \command{git pull} & I want \emph{your} stuff! \\
+  \end{tabular}
+\end{frame}
 
 \section{Working with others}
 \subsection{Creating your first Merge Request}
