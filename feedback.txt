@@ -1,45 +1,45 @@
-Söka styrelsen
+* Söka styrelsen
 
-clone & init -> Nämna att man brukar få dom commandon
+* clone & init -> Nämna att man brukar få dom commandon
 
-nämn uppgifter och att man inte behöver memorisera saker
-nämna att dom får slidesen
+* nämn uppgifter och att man inte behöver memorisera saker
+* nämna att dom får slidesen
 
-tydligare commandon, TANGO?
 
-git add -> markerar
-add hygien
+* git add -> markerar
+* add hygien
 
-nämna något om hur man ska tolka det vi skriver. $ betyder kommando osv
+* nämna något om hur man ska tolka det vi skriver. $ betyder kommando osv
 
-felaktig referens till doctor who
-
-highlighting i merge conflict!!!
+* highlighting i merge conflict!!!
 krokodilmunnar! :crocodile:
 referera till uppgifterna inuti presentationen i ett hörn eller något
 
-jag tror ändå -u ska komma tidigare
+* jag tror ändå -u ska komma tidigare
 
 "nivåerna" i föreläsningen är menad för (så nybörjare inte stressar)
 
-skriva ut "continuous integration"
+* skriva ut "continuous integration"
 
-Sammanfattningar
+* Sammanfattningar
 
-git-blame?
+git-blame? nej
 
-Avancerad git-föreläsning?
+Avancerad git-föreläsning? kanske?
 
-Tydligare om hur man skapar branches
+* Tydligare om hur man skapar branches
 
-Nämna att man kommer nog behöva dyka ner i terminalen
+* Nämna att man kommer nog behöva dyka ner i terminalen
 
-Git - GitLab - GitHub - The holy trio
+* Git - GitLab - GitHub - The holy trio
 
-Pause
+* Pause
 
 Mer intressant slides
 
 Bryta upp monotonin lite
 
-Sonic screw driver -> Tardis
+tydligare commandon, TANGO?
+
+felaktig referens till doctor who nej?
+Sonic screw driver -> Tardis kanske?

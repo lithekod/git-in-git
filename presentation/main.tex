@@ -9,7 +9,7 @@
 
 \usetikzlibrary{arrows, positioning}
 
-\title[git]{git --- an introduction}
+\title[Git]{Git --- an introduction}
 \subtitle{Learning to commit}
 \author{LiTHe kod}
 \date{2021}
@@ -18,7 +18,7 @@
 
 \newcommand{\temporalgray}[2]{\temporal<#1>{\phantom{#2}}{#2}{\textcolor{gray}{#2}}}
 \newcommand{\keyword}[1]{\hspace{-1.0em}\colorbox{black}{\textcolor{white}{\textbf{#1}\vphantom{Ep}}}\vspace{0.2em}} % yikes
-\newcommand{\command}[1]{\texttt{\textcolor{gray}{\$} {#1}}}
+\newcommand{\command}[1]{\colorbox{black!90!white!10!}{\vphantom{Ep}\texttt{\textcolor{gray}{\$} \textcolor{black}{#1}}}}
 
 \begin{document}
 
@@ -32,8 +32,27 @@
   Your one stop shop for Game Jams, competitive programming, meetups and other coding related events.
 
   \vspace{2.0em}
-  Applications are open for the 21/22 board! \\
+  \textbf{Applications are open for the 21/22 board!} \\
   Mail any questions to \texttt{ordf@lithekod.se} \\
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{The structure}
+  
+  \begin{itemize}[<+->]
+    \item Presentation -- slides at \url{www.lithekod.se/git}
+    \item Some small exercises \url{www.lithekod.se/git}
+    \item We start with the easy stuff
+    \item Feel free to ask questions in chat -- answers after the pause
+    \item \command{git status} -- a command, can be run in a terminal
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{center}
+    I don't need no terminal, I have a GUI!
+  \end{center}
 \end{frame}
 
 \section{Getting started}
@@ -46,7 +65,7 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{What even is git?}
+  \frametitle{What even is Git?}
 
   Version control that doesn't care about your feelings. \\
 
@@ -62,18 +81,18 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{What even is git? \dots and why is it better than email?}
+  \frametitle{What even is Git? \dots and why is it better than email?}
 
   Why emaijl/Droipbox/whatever isn't the best \\
-  version control system -- unlike git.\\
+  version control system -- unlike Git.\\
   \vspace{1em}
   \keyword{Cons}
   \begin{itemize}[<+->]
-    \item Hard to spell \& pronounce -- unlike git
-    \item Hard to see what has changed -- unlike git
-    \item Requires constant internet -- unlike git
-    \item Cannot do automatic merges  -- unlike git
-    \item Slow -- unlike git
+    \item Hard to spell \& pronounce -- unlike Git
+    \item Hard to see what has changed -- unlike Git
+    \item Requires constant internet -- unlike Git
+    \item Cannot do automatic merges  -- unlike Git
+    \item Slow -- unlike Git
   \end{itemize}
   \vspace{1em}
   
@@ -90,7 +109,7 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Getting started -- Telling git who you are}
+  \frametitle{Getting started -- Telling Git who you are}
 
   Your name:\\
   \command{git config --global user.name "kodapan"} \\[1em]
@@ -105,7 +124,9 @@
   \begin{tabular}{ll}
     \command{git clone} & \\
     \command{git init} & \\
-  \end{tabular}
+  \end{tabular} \\
+  \vspace{1em}
+  Usually given by something like GitHub or GitLab.
 \end{frame}
 
 \AtBeginSection[] % Do nothing for \section*
@@ -180,6 +201,25 @@
   Silence.
 \end{frame}
 
+\begin{frame}
+  \frametitle{Getting to know the family -- git add-ing properly}
+
+  \keyword{Thoughts}
+  \begin{itemize}[<+->]
+    \item Be specific when adding
+    \item It can be hard to ``un-add''
+    \item Avoid adding ``everything''
+    \item Think twice before adding with wildcards
+  \end{itemize}
+
+  \pause
+  \vspace{1em}
+
+  You typically don't want \texttt{\_\_pycache\_\_} or \texttt{main.o} files in
+  the repo. More details later.
+
+\end{frame}
+
 \begin{frame}[fragile]
   \frametitle{Getting to know the family -- commit}
   \keyword{When}\\
@@ -231,6 +271,25 @@ Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
 To github.com:kodapan/verkligt.git
    192c869..2ab0e3c  main -> main
 \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Getting to know the family -- push and remotes}
+  \keyword{Remote}\\
+  A git repo somewhere else. \\
+  \vspace{1em}
+
+  If you're standing on a branch no one else knows about, you have
+  to push the branch as well. \\
+  \vspace{1em}
+  \command{git push -u origin mybranch} \\
+  \vspace{1em}
+  Pushes the branch \texttt{mybranch} and all the
+  commits on it to the server.
+  \vspace{1em}
+
+  Afterwards you only have to run \command{git push}.
+
 \end{frame}
 
 \subsection{Commands for information}
@@ -527,7 +586,7 @@ index a40ce22..ea7235e 100644
   \frametitle{Branching out -- checkout}
 
     \keyword{When} \\
-    \command{git checkout} - The sonic screwdriver of git. Gets stuff from somewhere else. \\[1em]
+    \command{git checkout} - The TARDIS of Git. Can take you anywhere, anytime. \\[1em]
 
     \keyword{How} \\
     \hspace{-0.95em}
@@ -560,6 +619,19 @@ index a40ce22..ea7235e 100644
     \vspace{1em}
     \keyword{Expect} \\
     Silence.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Branching out -- creating a branch}
+
+  \command{git branch newbranch} \\
+  \command{git checkout newbranch} \\
+  Creates and moves to the new branch.
+  \vspace{1em}
+
+  \command{git checkout -b newbranch} \\
+  Combines both commands. Used by speed runners.
+
 \end{frame}
 
 \begin{frame}
@@ -637,7 +709,7 @@ index a40ce22..ea7235e 100644
     Resolving a merge conflict \\[1em]
 
         \alert{\texttt{<<<<<<< HEAD}} \\
-        \alert{\texttt{cool feature}} \\
+        \texttt{cool feature} \\
         \alert{\texttt{=======}} \\
         \texttt{not as cool feature} \\
         \texttt{cool feature} \\
@@ -647,6 +719,20 @@ index a40ce22..ea7235e 100644
 
 \begin{frame}
   \frametitle{Branching in -- merge} % #2
+
+    Resolving a merge conflict \\[1em]
+
+        \texttt{<<<<<<< HEAD} \\
+        \textcolor{blue}{\texttt{cool feature}} \\
+        \texttt{=======} \\
+        \texttt{not as cool feature} \\
+        \textcolor{blue}{\texttt{cool feature}} \\
+        \texttt{coolest feature} \\
+        \texttt{>>>>>>> featurebranch}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Branching in -- merge} % #3
 
     Resolving a merge conflict \\[1em]
 
@@ -672,12 +758,59 @@ index a40ce22..ea7235e 100644
     This may also result in \alert{merge conflicts}. \\[1em]
 \end{frame}
 
-%%% Working with others
+\begin{frame}[fragile]
+  \frametitle{Basic commands -- Summary}
+  \begin{tabular}{ll}
+    \keyword{Basic} \vspace{-0.15em} & \\
+    \command{git add} & I want to keep these! \vspace{-0.2em}\\
+    \command{git commit} & I did a thing! \vspace{-0.2em}\\
+    \command{git push} & I want to share this! \vspace{-0.2em}\\ % mention pull
 
-% Pause? 5-10 minutes
+    \keyword{Informative} & \vspace{-0.15em}\\
+    \command{git status} & What is happening? \vspace{-0.2em}\\
+    \command{git diff} & What has changed? \vspace{-0.2em}\\
+    \command{git log} & What has happened? \vspace{-0.2em}\\
+    \command{git show} & What changed over there? \vspace{-0.2em}\\
+
+    \keyword{Create branch} & \vspace{-0.15em}\\
+    \command{git checkout} & Jump to a branch! \vspace{-0.2em}\\
+    \command{git branch} & Manage branches! \vspace{-0.2em}\\
+
+    \keyword{Combine branch} & \vspace{-0.15em}\\
+    \command{git merge} & I want both this and that! \vspace{-0.2em}\\
+    \command{git pull} & I want \emph{your} stuff! \\
+  \end{tabular}
+\end{frame}
+
+\section{Pause and Questions}
+
+\begin{frame}[fragile]
+  \begin{center}
+    Everyone take a short break!
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{center}
+    Questions?
+  \end{center}
+\end{frame}
 
 \section{Working with others}
 \subsection{Creating your first Merge Request}
+
+\begin{frame}[fragile]
+  \frametitle{Project management -- Hosting}
+  \vspace{1em}
+
+  GitLab and GitHub are popular hosting sites for projects.
+  They're both Git-repositories on someone else's computer.
+  \vspace{1em}
+
+  LiU supplies a GitLab instance, and GitHub offers free GitHub Pro for students.
+  They're very equivalent in terms of features.
+
+\end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Creating your first Merge Request -- Getting started}
@@ -1009,7 +1142,7 @@ known to hopefully help anyone who may run into it.
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Project management -- CI} % not always needed etc
+  \frametitle{Project management -- Continuous Integration} % not always needed etc
 
   \keyword{Idea} \\
   Make a server deploy your code. Run some unit-tests so you don't have to.
@@ -1045,7 +1178,7 @@ known to hopefully help anyone who may run into it.
   \frametitle{Project management -- gitignore}
 
   \keyword{Idea} \\
-  Tell git to ignore files. Lets you be lazy.
+  Tell Git to ignore files. Lets you be lazy.
   \vspace{1em}
 
   \keyword{Ignore}
@@ -1057,7 +1190,8 @@ known to hopefully help anyone who may run into it.
   \end{itemize}
   \vspace{1em}
 
-  \visible<6->{More `guidelines' than actual rules.}
+  \visible<6->{More `guidelines' than actual rules.\\
+               \url{https://gitignore.io}}
   \vspace{1em}
 
   \visible<2->{\small \textsuperscript{*} Game developers beware \\}
@@ -1070,7 +1204,7 @@ known to hopefully help anyone who may run into it.
 \begin{frame}[fragile]
   \frametitle{Some more commands (bonus round)}
   These commands can be scary and confusing, and hard to `undo'. Worth a google if you
-  want to get more use out of git.
+  want to get more use out of Git.
   \vspace{1em}
   
   \command{git worktree} -- Looking at other branches \\
@@ -1108,7 +1242,7 @@ known to hopefully help anyone who may run into it.
 \begin{frame}[fragile]
   \begin{center}
     \Huge Thanks for your time! \\[0.75em]
-    \small Brought to you by LiTHe kod
+    \small Brought to you by LiTHe kod -- ask all the questions 
   \end{center}
 \end{frame}
 \end{document}
