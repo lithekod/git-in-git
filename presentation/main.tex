@@ -40,7 +40,7 @@
   \frametitle{The structure}
   
   \begin{itemize}[<+->]
-    \item Slides are available on \url{www.lithekod.se/git}
+    \item Presentation -- slides at \url{www.lithekod.se/git}
     \item Some small exercises \url{www.lithekod.se/git}
     \item We start with the easy stuff
     \item Feel free to ask questions in chat -- answers after the pause
@@ -51,7 +51,7 @@
 
 \begin{frame}[fragile]
   \begin{center}
-    I don't need no terminal, I have a GUI
+    I don't need no terminal, I have a GUI!
   \end{center}
 \end{frame}
 
@@ -124,7 +124,7 @@
   \begin{tabular}{ll}
     \command{git clone} & \\
     \command{git init} & \\
-  \end{tabular}
+  \end{tabular} \\
   \vspace{1em}
   Usually given by something like GitHub or GitLab.
 \end{frame}
@@ -206,10 +206,10 @@
 
   \keyword{Thoughts}
   \begin{itemize}[<+->]
-    \item \dots be specific when adding
-    \item \dots can be hard to ``un-add''
-    \item \dots avoid adding ``everything''
-    \item \dots think twice before adding with wildcards
+    \item Be specific when adding
+    \item It can be hard to ``un-add''
+    \item Avoid adding ``everything''
+    \item Think twice before adding with wildcards
   \end{itemize}
 
   \pause
@@ -276,18 +276,18 @@ To github.com:kodapan/verkligt.git
 \begin{frame}[fragile]
   \frametitle{Getting to know the family -- push and remotes}
   \keyword{Remote}\\
-  Is a git repo somewhere else. \\
+  A git repo somewhere else. \\
   \vspace{1em}
 
-  If you're standing on a branch noone else knows about, you have
-  to push the branch aswell\\
+  If you're standing on a branch no one else knows about, you have
+  to push the branch as well. \\
   \vspace{1em}
   \command{git push -u origin mybranch} \\
   Pushes the branch \texttt{mybranch} and all the
   commits on it to the server.
   \vspace{1em}
 
-  Afterwards you can run \command{git push}
+  Afterwards you only have to run \command{git push}.
 
 \end{frame}
 
@@ -585,7 +585,7 @@ index a40ce22..ea7235e 100644
   \frametitle{Branching out -- checkout}
 
     \keyword{When} \\
-    \command{git checkout} - The sonic screwdriver of Git. Gets stuff from somewhere else. \\[1em]
+    \command{git checkout} - The TARDIS of Git. Can take you anywhere, anytime. \\[1em]
 
     \keyword{How} \\
     \hspace{-0.95em}
@@ -628,8 +628,8 @@ index a40ce22..ea7235e 100644
   Creates and moves to the new branch.
   \vspace{1em}
 
-  \command{git cbeckout -b newbranch} \\
-  Combines both commands, used by speedrunners.
+  \command{git checkout -b newbranch} \\
+  Combines both commands. Used by speed runners.
 
 \end{frame}
 
@@ -758,7 +758,7 @@ index a40ce22..ea7235e 100644
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Basic commans -- Summary}
+  \frametitle{Basic commands -- Summary}
   \begin{tabular}{ll}
     \keyword{Basic} & \\
     \command{git add} & I want to keep these! \\
@@ -786,7 +786,7 @@ index a40ce22..ea7235e 100644
 
 \begin{frame}[fragile]
   \begin{center}
-    Everyone take 5!
+    Everyone take a short break!
   \end{center}
 \end{frame}
 
@@ -794,7 +794,7 @@ index a40ce22..ea7235e 100644
 
 \begin{frame}[fragile]
   \begin{center}
-    Questions!
+    Questions?
   \end{center}
 \end{frame}
 
@@ -806,10 +806,10 @@ index a40ce22..ea7235e 100644
   \vspace{1em}
 
   GitLab and GitHub are popular hosting sites for projects.
-  They're both just Git-repos on another computer.
+  They're both Git-repositories on someone else's computer.
   \vspace{1em}
 
-  LiU supplies a GitLab instance, and GitHub offers a student version.
+  LiU supplies a GitLab instance, and GitHub offers free GitHub Pro for students.
   They're very equivalent in terms of features.
 
 \end{frame}
@@ -1144,7 +1144,7 @@ known to hopefully help anyone who may run into it.
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Project management -- Continous Integration} % not always needed etc
+  \frametitle{Project management -- Continuous Integration} % not always needed etc
 
   \keyword{Idea} \\
   Make a server deploy your code. Run some unit-tests so you don't have to.
