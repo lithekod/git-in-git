@@ -689,7 +689,7 @@ index a40ce22..ea7235e 100644
     Resolving a merge conflict \\[1em]
 
         \alert{\texttt{<<<<<<< HEAD}} \\
-        \alert{\texttt{cool feature}} \\
+        \texttt{cool feature} \\
         \alert{\texttt{=======}} \\
         \texttt{not as cool feature} \\
         \texttt{cool feature} \\
@@ -699,6 +699,20 @@ index a40ce22..ea7235e 100644
 
 \begin{frame}
   \frametitle{Branching in -- merge} % #2
+
+    Resolving a merge conflict \\[1em]
+
+        \texttt{<<<<<<< HEAD} \\
+        \textcolor{blue}{\texttt{cool feature}} \\
+        \texttt{=======} \\
+        \texttt{not as cool feature} \\
+        \textcolor{blue}{\texttt{cool feature}} \\
+        \texttt{coolest feature} \\
+        \texttt{>>>>>>> featurebranch}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Branching in -- merge} % #3
 
     Resolving a merge conflict \\[1em]
 
