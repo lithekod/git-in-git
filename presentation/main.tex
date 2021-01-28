@@ -1,5 +1,18 @@
 \documentclass{beamer}
 
+\definecolor{lkblue}{HTML}{1EC6BA}
+\definecolor{lkbg}{HTML}{202020}
+
+\definecolor{alertred}{HTML}{D85D61}
+\definecolor{alertblue}{HTML}{5D8AD8}
+
+\usecolortheme[RGB={30, 198, 186}]{structure}
+\setbeamercolor{normal text}{fg=white, bg=black!87}
+
+\setbeamertemplate{itemize items}[circle]
+
+\def\arraystretch{1.2}%  1 is the default, change whatever you need
+
 \usepackage[utf8]{inputenc}
 
 \usepackage{fancyvrb}
@@ -17,8 +30,9 @@
 \logo{\vspace{-5.0em}\includegraphics[width=.06\textwidth]{watermark.png}\hspace*{.93\paperwidth}}
 
 \newcommand{\temporalgray}[2]{\temporal<#1>{\phantom{#2}}{#2}{\textcolor{gray}{#2}}}
-\newcommand{\keyword}[1]{\hspace{-1.0em}\colorbox{black}{\textcolor{white}{\textbf{#1}\vphantom{Ep}}}\vspace{0.2em}} % yikes
-\newcommand{\command}[1]{\colorbox{black!90!white!10!}{\vphantom{Ep}\texttt{\textcolor{gray}{\$} \textcolor{black}{#1}}}}
+\newcommand{\keyword}[1]{\hspace{-1.0em}\textcolor{lkblue}{\textbf{#1}}\vspace{0.2em}} % yikes
+\newcommand{\command}[1]{\colorbox{black!78}{\vphantom{Ep}\texttt{\textcolor{gray}{\$}
+\textcolor{white}{#1}}}}
 
 \begin{document}
 
@@ -59,8 +73,7 @@
 
 \begin{frame}[fragile]
   \begin{center}
-    \Huge \colorbox{black}{\textcolor{white}{DON'T}} \\
-    \Huge \colorbox{black}{\textcolor{white}{PANIC}}
+      \Huge \bfseries \textcolor{lkblue}{DON'T\\PANIC}
   \end{center}
 \end{frame}
 
@@ -415,8 +428,8 @@ index a40ce22..ea7235e 100644
 \begin{Verbatim}[commandchars=\\\{\}]
 @@ -1,5 +1,5 @@
  def main():
-\textcolor{red}{-    print("Hello World")}
-\textcolor{blue}{+    print("Hello World!")}
+\textcolor{alertred}{-    print("Hello World")}
+\textcolor{alertblue}{+    print("Hello World!")}
  
  if __name__ == "__main__":
      main()
@@ -524,7 +537,7 @@ $ git log --graph
 
 
 $ git log --graph
-* commit \textcolor{red}{4582}c8c2c41d6c7c46bab45d1aae807afacc357e
+* commit \textcolor{alertred}{4582}c8c2c41d6c7c46bab45d1aae807afacc357e
 | Author: Kodapan <kodapan@lithekod.se>
 | Date:   Fri Jan 22 17:48:27 2021 +0100
 | 
@@ -541,7 +554,7 @@ $ git log --graph
 \begin{frame}[fragile]
   \frametitle{Commands for information -- show}
 \begin{Verbatim}[commandchars=\\\{\}]
-$ git show \textcolor{red}{4582}
+$ git show \textcolor{alertred}{4582}
 \end{Verbatim}
 \pause{}
 \vspace{-2.5ex}
@@ -562,8 +575,8 @@ index a40ce22..ea7235e 100644
 +++ b/my_file.py
 @@ -1,5 +1,5 @@
  def main():
-\textcolor{red}{-    print("Hello World")}
-\textcolor{blue}{+    print("Hello World!")}
+\textcolor{alertred}{-    print("Hello World")}
+\textcolor{alertblue}{+    print("Hello World!")}
 ...
 \end{Verbatim}
 \end{frame}
@@ -639,11 +652,11 @@ index a40ce22..ea7235e 100644
 
     Using \texttt{git log} it is possible to travel in time and reminisce. \\[1em]
 
-    \alt<2->{\command{git checkout 479ad80ddf}}{\command{git checkout <hash>}}
+    \alt<2->{\command{git checkout 479ad80ddf}}{\command{git checkout <hash>}}\\[0.3em]
 
     \pause[3]
 
-    \alert{Watch out! This puts you in 'Detached HEAD state'} \\[1em]
+    \textcolor{alertred}{Watch out! This puts you in 'Detached HEAD state'} \\[1em]
 
     \pause
 
@@ -676,7 +689,7 @@ index a40ce22..ea7235e 100644
 
     \pause
     \keyword{Expect} \\
-    This may result in a so called ``\alert{merge conflict}" \\[1em]
+    This may result in a so called ``\textcolor{alertred}{merge conflict}" \\[1em]
 
     Again, \emph{don't panic}!
 \end{frame}
@@ -685,7 +698,7 @@ index a40ce22..ea7235e 100644
   \frametitle{PANIC!}
 
     \begin{center}
-        \Huge \alert{PANIC PANIC PANIC PANIC PANIC}
+        \Huge \bfseries \textcolor{alertred}{PANIC PANIC PANIC \\PANIC PANIC PANIC}
     \end{center}
 \end{frame}
 
@@ -708,13 +721,13 @@ index a40ce22..ea7235e 100644
 
     Resolving a merge conflict \\[1em]
 
-        \alert{\texttt{<<<<<<< HEAD}} \\
+        \textcolor{alertred}{\texttt{<<<<<<< HEAD}} \\
         \texttt{cool feature} \\
-        \alert{\texttt{=======}} \\
+        \textcolor{alertred}{\texttt{=======}} \\
         \texttt{not as cool feature} \\
         \texttt{cool feature} \\
         \texttt{coolest feature} \\
-        \alert{\texttt{>>>>>>> featurebranch}}
+        \textcolor{alertred}{\texttt{>>>>>>> featurebranch}}
 \end{frame}
 
 \begin{frame}
@@ -723,10 +736,10 @@ index a40ce22..ea7235e 100644
     Resolving a merge conflict \\[1em]
 
         \texttt{<<<<<<< HEAD} \\
-        \textcolor{blue}{\texttt{cool feature}} \\
+        \textcolor{alertblue}{\texttt{cool feature}} \\
         \texttt{=======} \\
         \texttt{not as cool feature} \\
-        \textcolor{blue}{\texttt{cool feature}} \\
+        \textcolor{alertblue}{\texttt{cool feature}} \\
         \texttt{coolest feature} \\
         \texttt{>>>>>>> featurebranch}
 \end{frame}
@@ -755,31 +768,35 @@ index a40ce22..ea7235e 100644
     \pause
 
     \keyword{Expect}\\
-    This may also result in \alert{merge conflicts}. \\[1em]
+    This may also result in \textcolor{alertred}{merge conflicts}. \\[1em]
 \end{frame}
+
 
 \begin{frame}[fragile]
   \frametitle{Basic commands -- Summary}
+{
+\def\arraystretch{0.8}%  1 is the default, change whatever you need
   \begin{tabular}{ll}
-    \keyword{Basic} \vspace{-0.15em} & \\
-    \command{git add} & I want to keep these! \vspace{-0.2em}\\
-    \command{git commit} & I did a thing! \vspace{-0.2em}\\
-    \command{git push} & I want to share this! \vspace{-0.2em}\\ % mention pull
+    \keyword{Basic} & \\[-0.25em]
+    \command{git add} & I want to keep these! \\
+    \command{git commit} & I did a thing! \\
+    \command{git push} & I want to share this! \\[0.4em] % mention pull
 
-    \keyword{Informative} & \vspace{-0.15em}\\
-    \command{git status} & What is happening? \vspace{-0.2em}\\
-    \command{git diff} & What has changed? \vspace{-0.2em}\\
-    \command{git log} & What has happened? \vspace{-0.2em}\\
-    \command{git show} & What changed over there? \vspace{-0.2em}\\
+    \keyword{Informative} & \\[-0.25em]
+    \command{git status} & What is happening? \\
+    \command{git diff} & What has changed? \\
+    \command{git log} & What has happened? \\
+    \command{git show} & What changed over there? \\[0.4em]
 
-    \keyword{Create branch} & \vspace{-0.15em}\\
-    \command{git checkout} & Jump to a branch! \vspace{-0.2em}\\
-    \command{git branch} & Manage branches! \vspace{-0.2em}\\
+    \keyword{Create branch} & \\[-0.25em]
+    \command{git checkout} & Jump to a branch! \\
+    \command{git branch} & Manage branches! \\[0.4em]
 
-    \keyword{Combine branch} & \vspace{-0.15em}\\
-    \command{git merge} & I want both this and that! \vspace{-0.2em}\\
+    \keyword{Combine branch} & \\[-0.25em]
+    \command{git merge} & I want both this and that! \\
     \command{git pull} & I want \emph{your} stuff! \\
   \end{tabular}
+}
 \end{frame}
 
 \section{Pause and Questions}
@@ -1096,7 +1113,7 @@ known to hopefully help anyone who may run into it.
 
   \centering
   \begin{tikzpicture}[
-      dot/.style={circle, draw=black, fill=black, minimum size=1.5mm, inner sep=0pt},
+      dot/.style={circle, draw=white, fill=white, minimum size=1.5mm, inner sep=0pt},
       ]
       \node at (0,0) [dot]  (A) {};
       \node at (1,-1) [dot] (B) {};
