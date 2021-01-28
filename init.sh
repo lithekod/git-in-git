@@ -1,6 +1,14 @@
 #!/usr/bin/env sh
 
-case $1 in
+if [ -z $1 ]
+then
+    CURR=$(basename $(pwd))
+    cd ..
+else
+    CURR=$1
+fi
+
+case $CURR in
 1*|01*)
     if cd 01-*
     then
@@ -12,6 +20,7 @@ case $1 in
 
     git init
     echo "I'm a text file!" > hello.txt
+    chmod 755 hello.txt
     git add hello.txt
     git commit -m "Inital commit"
     echo "With ~style~" >> hello.txt
@@ -31,6 +40,7 @@ case $1 in
     echo "I'm a text file!" > hello.txt
 
     git init
+    chmod 755 hello.txt
     git add hello.txt
     git commit -m "Inital commit"
 
@@ -49,6 +59,7 @@ case $1 in
     echo "I'm a text file!" > hello.txt
 
     git init
+    chmod 755 hello.txt
     git add hello.txt
     git commit -m "Inital commit"
 
@@ -74,6 +85,7 @@ case $1 in
     echo "I'm a text file!" > hello.txt
 
     git init
+    chmod 755 hello.txt
     git add hello.txt
     git commit -m "Inital commit"
     git branch -m "get-away-from-me"
@@ -96,6 +108,7 @@ case $1 in
 
     git init
     git checkout -b master
+    chmod 755 code.py
     git add code.py
     git commit -m "Inital commit"
 
@@ -125,6 +138,7 @@ case $1 in
 
     git init
     git checkout -b master
+    chmod 755 code.py
     git add code.py
     git commit -m "Inital commit"
 

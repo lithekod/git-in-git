@@ -1,6 +1,14 @@
 #!/usr/bin/env sh
 
-case $1 in
+if [ -z $1 ]
+then
+    CURR=$(basename $(pwd))
+    cd ..
+else
+    CURR=$1
+fi
+
+case $CURR in
 1*|01*)
     cd 01-*
 

@@ -1,8 +1,14 @@
 #!/usr/bin/env sh
 
-# TODO(ed): Ask if you REALLY want to see the answers?
+if [ -z $1 ]
+then
+    CURR=$(basename $(pwd))
+    cd ..
+else
+    CURR=$1
+fi
 
-case $1 in
+case $CURR in
 1*|01*)
     echo "git add ."
 
