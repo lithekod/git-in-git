@@ -1,7 +1,7 @@
 SUBDIR=ex
-INIT=./init.sh
-ANS=./answer.sh
-CHK=./check.sh
+INIT=init.sh
+ANS=answer.sh
+CHK=check.sh
 TMP=.tmp
 SLIDES=slides.pdf
 
@@ -49,11 +49,11 @@ zip: all
 
 %/: clean-local
 	mkdir $@
-	$(SHELL) $(INIT) $@
+	$(SHELL) ./$(INIT) $@
 
 %/c: %/
 	chmod +x $(ANS)
-	$(SHELL) -c "$(ANS) $< > $(TMP)"
+	$(SHELL) -c "./$(ANS) $< > $(TMP)"
 	$(SHELL) -c "cd $<; $(SHELL) ../$(TMP)"
-	$(SHELL) -c "$(CHK) $<"
+	$(SHELL) -c "./$(CHK) $<"
 	rm $(TMP)
