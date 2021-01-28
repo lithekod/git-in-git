@@ -8,19 +8,19 @@ to only do the exercises that look interesting.
 Remember to check back on the slides or ask a question if anything
 is unclear or weird.
 
-There are 3 scripts to care about, that can be run on each exercise-folder.
+There are 3 scripts to care about, that can be run on each exercise folder.
 
-check.sh  [taskid] - Says if you've "SOLVED" the exercise, won't spoil the answer
+check.sh  [taskid] - Says if you've "SOLVED" the exercise. Won't spoil the answer
 answer.sh [taskid] - Gives an example solution to the exercise
-init.sh   [taskid] - Resets the exercise to it's initial state
+init.sh   [taskid] - Resets the exercise to its initial state
 
 NOTE: If no taskid is specified, and you are in an exercise folder, the folder for that
 exercise will be assumed.
 
 E.g:
 $ cd 01-*; ../check.sh   # Check if task 1 is completed correctly
-$ ./init.sh 3            # Re initialize task 3
-$ ./answer.sh 4          # Print outs the answers to task 4
+$ ./init.sh 3            # Re-initialize task 3
+$ ./answer.sh 4          # Prints out the answers to task 4
 
 
 # Doing an exercise
@@ -35,13 +35,13 @@ $ ./answer.sh 4          # Print outs the answers to task 4
     $ git status
     ...
 
-4. Run the check script, if no task is specified, it assumes the current
+4. Run the check script. If no task is specified, it assumes the current
     exercise
 
     $ ../check.sh
 
 5. If not solved, go back to step 3
-6. Party
+6. Party!
 
 
 ============================== Task 1 ==============================
