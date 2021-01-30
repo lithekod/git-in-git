@@ -1,82 +1,84 @@
-Welcome to LiTHe kod's interactive git excercises!
+Welcome to LiTHe kod's interactive Git exercises!
 
 
-View the problem statement here and cd into the corresponding folder to start.
-When you are done with an exercise, check the solution by running
+# Getting started
+The problem statements are listed further down, so feel free
+to only do the exercises that look interesting.
 
-./check.sh <folder>
+Remember to check back on the slides or ask a question if anything
+is unclear or weird.
 
-For example, to check your solution to excercise 02-learning-to-commit use:
+There are 3 scripts to care about, that can be run on each exercise folder.
 
-./check 2
+check.sh  [taskid] - Says if you've "SOLVED" the exercise. Won't spoil the answer
+answer.sh [taskid] - Gives an example solution to the exercise
+init.sh   [taskid] - Resets the exercise to its initial state
 
+NOTE: If no taskid is specified, and you are in an exercise folder, the folder for that
+exercise will be assumed.
 
-You can also view the answer for a particular exercise by running:
-
-./answer.sh <folder>
-
-Ex.
-
-./answer.sh 3
-
-
-To restart a exercise, run the following:
-
-./init.sh <folder>
-
-Ex.
-
-./init.sh 6
+E.g:
+$ cd 01-*; ../check.sh   # Check if task 1 is completed correctly
+$ ./init.sh 3            # Re-initialize task 3
+$ ./answer.sh 4          # Prints out the answers to task 4
 
 
+# Doing an exercise
+1. Decide on what exercise you want to do
 
-###############################################################################
-#                                      1                                      #
-###############################################################################
+2. "cd" into that directory, e.g using the "cd" command
 
-In this excercise the objective is to stage the file in the folder.
+    $ cd 01-something-to-add/
+
+3. Run your Git commands, just like in real life!
+
+    $ git status
+    ...
+
+4. Run the check script. If no task is specified, it assumes the current
+    exercise
+
+    $ ../check.sh
+
+5. If not solved, go back to step 3
+6. Party!
+
+
+============================== Task 1 ==============================
+In this exercise the objective is to stage the file in the folder.
 The easiest way to stage a file is to use `git add`.
 
-###############################################################################
-#                                      2                                      #
-###############################################################################
 
+============================== Task 2 ==============================
 Here you need to create a new commit in some way. Most often a commit is
 created after changing the contents of one or several files. Making use of
 `git add` and `git commit` is required.
 
-###############################################################################
-#                                      3                                      #
-###############################################################################
 
-Sometimes you forget to add something to a commit. Thankfully git has
-functionality to do just that. In this excercise you need to add more changes
+============================== Task 3 ==============================
+Sometimes you forget to add something to a commit. Thankfully Git has
+functionality to do just that. In this exercise you need to add more changes
 to the last commit. This can be done in several ways, however, the most
 straightforward way is to use `git commit --amend`.
 
-###############################################################################
-#                                      4                                      #
-###############################################################################
 
+============================== Task 4 ==============================
 Branches is the key to working together with other people on projects. In this
-excercise your task is to create and move to a new branch. Using some
+exercise your task is to create and move to a new branch. Using some
 combination of `git branch` and `git checkout` is a good idea.
 
-###############################################################################
-#                                      5                                      #
-###############################################################################
 
+============================== Task 5 ==============================
 When you are finished with some feature on a branch, the next step is usually
 to merge it into another branch. Here the task is to merge the branch
 `implement-f` into the branch `master` (the original branch).
 
-###############################################################################
-#                                      6                                      #
-###############################################################################
 
+============================== Task 6 ==============================
 Oh no! Someone tried to merge and it ended up in a conflict! You need to
 resolve it somehow. `git status` will tell you everything you need to know.
 There is no need to push anything after you are done.
 
 
 -- tip: View this document more easily using less: `less instructions.txt`
+   or maybe even a GUI text editor!
