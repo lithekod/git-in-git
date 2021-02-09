@@ -5,6 +5,7 @@
 
 \definecolor{alertred}{HTML}{dc4c55}
 \definecolor{alertblue}{HTML}{5889DF}
+\definecolor{alertgray}{HTML}{505050}
 
 \usecolortheme[RGB={30, 198, 186}]{structure}
 \setbeamercolor{normal text}{fg=white, bg=black!87}
@@ -20,6 +21,7 @@
 \usepackage{tikz}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{soul}
 
 \usetikzlibrary{arrows, positioning}
 
@@ -91,9 +93,9 @@
 
 \begin{frame}[fragile]
   \frametitle{Getting started -- Getting binaries}
-  
-  Windows: git BASH, \url{gitforwindows.org} or via WSL\\
-  macOS: homebrew, \url{git-scm.com}\\
+
+  Windows: git BASH, \url{gitforwindows.org} or via WSL\\[1em]
+  macOS: homebrew, \url{git-scm.com}\\[1em]
   Linux: Probably already installed\\
 
 \end{frame}
@@ -624,13 +626,14 @@ index a40ce22..ea7235e 100644
 \begin{frame}
   \frametitle{Branching out -- creating a branch}
 
+  Create and move to a new branch.\\
   \command{git branch newbranch} \\
   \command{git checkout newbranch} \\
-  Creates and moves to the new branch.
-  \vspace{1em}
 
+  \vspace{2em}
+
+  Combine both commands. Used by speed runners.\\
   \command{git checkout -b newbranch} \\
-  Combines both commands. Used by speed runners.
 
 \end{frame}
 
@@ -736,13 +739,13 @@ index a40ce22..ea7235e 100644
 
     Resolving a merge conflict \\[1em]
 
-        \textcolor{gray}{\texttt{<<<<<<< HEAD}} \\
-        \textcolor{gray}{\texttt{cool feature}} \\
-        \textcolor{gray}{\texttt{=======}} \\
+        \textcolor{alertgray}{\texttt{<<<<<<< HEAD}} \\
+        \textcolor{alertgray}{\texttt{cool feature}} \\
+        \textcolor{alertgray}{\texttt{=======}} \\
         \texttt{not as cool feature} \\
         \texttt{cool feature} \\
         \texttt{coolest feature} \\
-        \textcolor{gray}{\texttt{>>>>>>> featurebranch}} \\[1em]
+        \textcolor{alertgray}{\texttt{>>>>>>> featurebranch}} \\[1em]
         Done! Save, \texttt{add}, \texttt{commit} and then \texttt{push} to
         resolve the conflict!
 \end{frame}
@@ -1225,11 +1228,17 @@ known to hopefully help anyone who may run into it.
   \vspace{1em}
   \pause
 
+  \setuldepth{GitHub's cheat-sheet}
+
   From the web, just a GET away \\
-  \hspace{1em} \url{git-scm.com/doc} -- Links and reference manual \\
-  \hspace{1em} \url{lithekod.se/gitcheatsheet/} -- LiTHe kods cheat-sheet \\
-  \hspace{1em} \url{shorturl.at/jpCDQ} -- GitHub's cheat-sheet \\
-  \hspace{1em} \url{shorturl.at/tuLO3} -- Flowchart by Justin Hileman for messes\\
+  \hspace{1em} \href{https://git-scm.com/doc}
+    {\ul{git-scm.com/doc}} -- Links and reference manual \\
+  \hspace{1em} \href{https://lithekod.se/gitcheatsheet/}
+    {\ul{lithekod.se/gitcheatsheet}} -- LiTHe kods cheat-sheet \\
+  \hspace{1em} \href{https://education.github.com/git-cheat-sheet-education.pdf}
+    {\ul{GitHub's cheat-sheet}} \\
+  \hspace{1em} \href{http://justinhileman.info/article/git-pretty/git-pretty.pdf}
+    {\ul{Flowchart by Justin Hileman for messes}} \\
 
 \end{frame}
 
